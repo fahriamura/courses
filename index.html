@@ -8,354 +8,365 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
     <style>
-        @font-face {
-            font-family: 'Helvetica Neue';
-            src: url('https://fonts.cdnfonts.com/css/helvetica-neue-55') format('woff2');
-            font-weight: normal;
-            font-style: normal;
-        }
+/* Font Face */
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('https://fonts.cdnfonts.com/css/helvetica-neue-55') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
 
-        body {
-            margin: 0;
-            font-family: 'Helvetica Neue', sans-serif;
-            background-color: #000;
-            color: #fff;
-            line-height: 1.6;
-        }
-        .container {
-            display: flex; 
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap; /
-            }
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: 'Helvetica Neue', sans-serif;
+    background-color: #000;
+    color: #fff;
+    line-height: 1.6;
+}
 
-            .enroll-button {
-            flex-shrink: 0; 
-            }
+.container {
+    display: flex; 
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Fixed the comment syntax */
+}
 
-        @media (max-width: 768px) { 
-            .container {
-                flex-direction: column; 
-                align-items: flex-start; 
-            }
+.enroll-button {
+    flex-shrink: 0; 
+    min-width: 120px;
+    padding: 10px 20px;
+    white-space: nowrap;
+}
 
-            .enroll-button {
-                width: 100%; 
-                text-align: center;
-            }
-        }       
-        .enroll-button {
-            min-width: 120px;
-            padding: 10px 20px; 
-            white-space: nowrap; 
-        }
+/* Responsive Design */
+@media (max-width: 768px) { 
+    .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 50px;
-            background-color: rgba(0, 0, 0, 0.8);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            flex-wrap: wrap;
-        }
+    .enroll-button {
+        width: 100%;
+        text-align: center;
+    }
+}
 
-        .logo h1 {
-            font-weight: 600;
-            font-size: 1.5rem;
-            color: #ff5733;
-        }
+/* Navigation */
+nav {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    flex-wrap: wrap;
+}
 
-        .logo span {
-            color: #fff;
-        }
+/* Logo */
+.logo h1 {
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: #ff5733;
+}
 
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 30px;
-        }
+.logo span {
+    color: #fff;
+}
 
-        .nav-links li {
-            font-weight: 400;
-        }
+/* Navigation Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
 
-        .nav-links a {
-            color: #fff;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
+}
 
-        .nav-links a:hover {
-            color: #ff5733;
-        }
+.nav-links li {
+    font-weight: 400;
+}
 
-        .nav-icons {
-            display: flex;
-            gap: 20px;
-        }
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
 
-        .nav-icons a {
-            color: #fff;
-            font-size: 1.2rem;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
+.nav-links a:hover {
+    color: #ff5733;
+}
 
-        .nav-icons a:hover {
-            color: #ff5733;
-        }
+/* Navigation Icons */
+.nav-icons {
+    margin-right: 10%;
+    display: flex;
+    gap: 20px;
+}
 
-        .hero {
-            background: url('/api/placeholder/1600/900') no-repeat center center fixed;
-            background-size: cover;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: #fff;
-            position: relative;
-            overflow: hidden;
-        }
+.nav-icons a {
+    color: #fff;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: color 0.3s;
+}
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.5);
-        }
+.nav-icons a:hover {
+    color: #ff5733;
+}
 
-        .hero-content {
-            position: relative;
-            z-index: 1;
-        }
+/* Hero Section */
+.hero {
+    background: url('/api/placeholder/1600/900') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
 
-        .hero h1 {
-            font-size: 4rem;
-            margin: 0;
-        }
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
 
-        .hero p {
-            font-size: 1.2rem;
-            margin: 15px 0 30px 0;
-            max-width: 600px;
-        }
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
 
-        .cta {
-            background-color: #ff5733;
-            color: #fff;
-            padding: 12px 24px;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: background-color 0.3s;
-        }
+.hero h1 {
+    font-size: 4rem;
+    margin: 0;
+}
 
-        .cta:hover {
-            background-color: #c7441a;
-        }
+.hero p {
+    font-size: 1.2rem;
+    margin: 15px 0 30px 0;
+    max-width: 600px;
+}
 
-        .about,
-        .program,
-        .courses,
-        .testimonials,
-        .benefits,
-        .faq {
-            padding: 100px 50px;
-            text-align: center;
-            background-color: #111;
-        }
+.cta {
+    background-color: #ff5733;
+    color: #fff;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
 
-        .about h2,
-        .program h2,
-        .courses h2,
-        .testimonials h2,
-        .benefits h2,
-        .faq h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
+.cta:hover {
+    background-color: #c7441a;
+}
 
-        .about p,
-        .program p {
-            font-size: 1.1rem;
-            max-width: 800px;
-            margin: 0 auto 40px auto;
-        }
+/* Sections */
+.about, .program, .courses, .testimonials, .benefits, .faq {
+    padding: 100px 50px;
+    text-align: center;
+    background-color: #111;
+}
 
-        .program ul {
-            list-style: none;
-            padding: 0;
-            text-align: left;
-            max-width: 600px;
-            margin: 0 auto;
-        }
+.about h2,
+.program h2,
+.courses h2,
+.testimonials h2,
+.benefits h2,
+.faq h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
 
-        .program ul li {
-            font-size: 1rem;
-            padding: 10px 0;
-            border-bottom: 1px solid #333;
-        }
+.about p,
+.program p {
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+}
 
-        .course-category {
-            margin-bottom: 50px;
-        }
+.program ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    max-width: 600px;
+    margin: 0 auto;
+}
 
-        .course-category h3 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
+.program ul li {
+    font-size: 1rem;
+    padding: 10px 0;
+    border-bottom: 1px solid #333;
+}
 
-        .course-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
+.course-category {
+    margin-bottom: 50px;
+}
 
-        .course-item {
-            background-color: #222;
-            padding: 20px;
-            border-radius: 10px;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
+.course-category h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
 
-        .course-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-        }
+/* Course List */
+.course-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
 
-        .course-item img {
-            width: 100%;
-            border-radius: 10px;
-            margin-bottom: 15px;
-        }
+.course-item {
+    background-color: #222;
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
 
-        .course-item h4 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-        }
+.course-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
 
-        .course-item p {
-            font-size: 1rem;
-            margin-bottom: 15px;
-        }
+.course-item img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
 
-        .benefits,
-        .faq {
-            background-color: #111;
-        }
+.course-item h4 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
 
-        .benefits .benefit-item,
-        .faq .faq-item {
-            margin-bottom: 30px;
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
+.course-item p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
 
-        .benefits .benefit-item i,
-        .faq .faq-item i {
-            font-size: 2rem;
-            color: #ff5733;
-        }
+/* Benefits and FAQ */
+.benefits, .faq {
+    background-color: #111;
+}
 
-        .benefits .benefit-item h3,
-        .faq .faq-item h3 {
-            font-size: 1.5rem;
-            margin: 0;
-        }
+.benefits .benefit-item,
+.faq .faq-item {
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
 
-        .faq-item-content {
-            display: none;
-            margin-top: 10px;
-        }
+.benefits .benefit-item i,
+.faq .faq-item i {
+    font-size: 2rem;
+    color: #ff5733;
+}
 
-        footer {
-            background-color: #111;
-            padding: 50px 20px;
-            text-align: center;
-            color: #666;
-            font-size: 0.9rem;
-        }
+.benefits .benefit-item h3,
+.faq .faq-item h3 {
+    font-size: 1.5rem;
+    margin: 0;
+}
 
-        .footer-content {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+.faq-item-content {
+    display: none;
+    margin-top: 10px;
+}
 
-        .footer-section {
-            margin-bottom: 30px;
-        }
+/* Footer */
+footer {
+    background-color: #111;
+    padding: 50px 20px;
+    text-align: center;
+    color: #666;
+    font-size: 0.9rem;
+}
 
-        .footer-section h3 {
-            color: #fff;
-            margin-bottom: 15px;
-        }
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
-        .footer-section ul {
-            list-style: none;
-            padding: 0;
-        }
+.footer-section {
+    margin-bottom: 30px;
+}
 
-        .footer-section ul li {
-            margin-bottom: 10px;
-        }
+.footer-section h3 {
+    color: #fff;
+    margin-bottom: 15px;
+}
 
-        .footer-section ul li a {
-            color: #666;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
 
-        .footer-section ul li a:hover {
-            color: #ff5733;
-        }
+.footer-section ul li {
+    margin-bottom: 10px;
+}
 
-        .social-icons {
-            margin-top: 20px;
-        }
+.footer-section ul li a {
+    color: #666;
+    text-decoration: none;
+    transition: color 0.3s;
+}
 
-        .social-icons a {
-            color: #666;
-            font-size: 1.5rem;
-            margin: 0 10px;
-            transition: color 0.3s;
-        }
+.footer-section ul li a:hover {
+    color: #ff5733;
+}
 
-        .social-icons a:hover {
-            color: #ff5733;
-        }
+/* Social Icons */
+.social-icons {
+    margin-top: 20px;
+}
 
-        #scrollToTop {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #ff5733;
-            color: #fff;
-            border: none;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            display: none;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            font-size: 1.5rem;
-        }
+.social-icons a {
+    color: #666;
+    font-size: 1.5rem;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #ff5733;
+}
+
+/* Scroll to Top Button */
+#scrollToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ff5733;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
     </style>
 </head>
 
