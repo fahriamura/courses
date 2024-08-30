@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DetoxCourses</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    <style>
+/* Font Face */
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('https://fonts.cdnfonts.com/css/helvetica-neue-55') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: 'Helvetica Neue', sans-serif;
+    background-color: #000;
+    color: #fff;
+    line-height: 1.6;
+}
+
+.container {
+    display: flex; 
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Fixed the comment syntax */
+}
+
+.enroll-button {
+    flex-shrink: 0; 
+    min-width: 120px;
+    padding: 10px 20px;
+    white-space: nowrap;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) { 
+    .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .enroll-button {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Navigation */
+nav {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    flex-wrap: wrap;
+}
+
+/* Logo */
+.logo h1 {
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: #ff5733;
+}
+
+.logo span {
+    color: #fff;
+}
+
+/* Navigation Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+
+}
+
+.nav-links li {
+    font-weight: 400;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ff5733;
+}
+
+/* Navigation Icons */
+.nav-icons {
+    margin-right: 10%;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-icons a {
+    color: #fff;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-icons a:hover {
+    color: #ff5733;
+}
+
+/* Hero Section */
+.hero {
+    background: url('/api/placeholder/1600/900') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin: 0;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin: 15px 0 30px 0;
+    max-width: 600px;
+}
+
+.cta {
+    background-color: #ff5733;
+    color: #fff;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.cta:hover {
+    background-color: #c7441a;
+}
+
+/* Sections */
+.about, .program, .courses, .testimonials, .benefits, .faq {
+    padding: 100px 50px;
+    text-align: center;
+    background-color: #111;
+}
+
+.about h2,
+.program h2,
+.courses h2,
+.testimonials h2,
+.benefits h2,
+.faq h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.about p,
+.program p {
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+}
+
+.program ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.program ul li {
+    font-size: 1rem;
+    padding: 10px 0;
+    border-bottom: 1px solid #333;
+}
+
+.course-category {
+    margin-bottom: 50px;
+}
+
+.course-category h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Course List */
+.course-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.course-item {
+    background-color: #222;
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.course-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.course-item img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.course-item h4 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.course-item p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+/* Benefits and FAQ */
+.benefits, .faq {
+    background-color: #111;
+}
+
+.benefits .benefit-item,
+.faq .faq-item {
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.benefits .benefit-item i,
+.faq .faq-item i {
+    font-size: 2rem;
+    color: #ff5733;
+}
+
+.benefits .benefit-item h3,
+.faq .faq-item h3 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.faq-item-content {
+    display: none;
+    margin-top: 10px;
+}
+
+/* Footer */
+footer {
+    background-color: #111;
+    padding: 50px 20px;
+    text-align: center;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    margin-bottom: 30px;
+}
+
+.footer-section h3 {
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #666;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #ff5733;
+}
+
+/* Social Icons */
+.social-icons {
+    margin-top: 20px;
+}
+
+.social-icons a {
+    color: #666;
+    font-size: 1.5rem;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #ff5733;
+}
+
+/* Scroll to Top Button */
+#scrollToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ff5733;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Detox<span>Courses</span></h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#program">Our Program</a></li>
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="#benefits">Benefits</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-icons">
+                <a href="#profile" title="Profile"><i class="fas fa-user"></i></a>
+                <a href="#cart" title="Cart"><i class="fas fa-shopping-cart"></i></a>
+            </div>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Transform Your Health</h1>
+            <p>Join our comprehensive detox courses guided by experts and embark on a journey to a healthier you.</p>
+            <a href="#courses" class="cta">Explore Courses</a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <h2>About Us</h2>
+        <p>At DetoxCourses, we are passionate about empowering individuals to take control of their health through expert-guided detox programs. Our mission is to provide you with the knowledge, tools, and support needed to cleanse your body of toxins, boost your energy levels, and achieve optimal wellness.</p>
+        <p>Founded by a team of nutritionists, health coaches, and wellness experts, our courses are designed to deliver transformative results while being accessible to everyone, regardless of their current health status or lifestyle.</p>
+    </section>
+
+    <section id="program" class="program">
+        <h2>What's in Our Program?</h2>
+        <p>Our 6-week transformational detox program is designed to reset your body and mind, helping you achieve lasting health benefits. Here's what you can expect:</p>
+        <ul>
+            <li>Comprehensive guidance on diet and lifestyle changes tailored to your individual needs.</li>
+            <li>Carefully selected, high-quality supplements to enhance the detox process and support your body's natural cleansing mechanisms.</li>
+            <li>Weekly live Zoom sessions with our expert instructors, allowing for real-time Q&A and personalized advice.</li>
+            <li>Exclusive access to a library of video content that details every step of the detox journey, from meal preparation to stress management techniques.</li>
+            <li>Continuous support through our online community platform and weekly check-ins to monitor your progress and keep you motivated.</li>
+            <li>Post-program guidance to help you maintain your results and integrate healthy habits into your daily life.</li>
+        </ul>
+    </section>
+
+    <section id="courses" class="courses">
+        <h2>Our Courses</h2>
+
+        <div class="course-category">
+            <h3><i class="fas fa-video"></i> Zoom Courses</h3>
+            <div class="course-list">
+                <div class="course-item">
+                    <img src="/api/placeholder/300/200" alt="Live Detox Coaching">
+                    <h4>Live Detox Coaching</h4>
+                    <p>Instructor: John Smith</p>
+                    <p>Duration: 6 weeks</p>
+                    <p>Price: $199</p>
+                    <a href="#" class="cta">Enroll Now</a>
+                </div>
+                <div class="course-item">
+                    <img src="/api/placeholder/301/200" alt="Advanced Detox Techniques">
+                    <h4>Advanced Detox Techniques</h4>
+                    <p>Instructor: Sarah Lee</p>
+                    <p>Duration: 8 weeks</p>
+                    <p>Price: $249</p>
+                    <a href="#" class="cta">Enroll Now</a>
+                </div>
+                <div class="course-item">
+                    <img src="/api/placeholder/302/200" alt="Mind-Body Detox">
+                    <h4>Mind-Body Detox</h4>
+                    <p>Instructor: Emma Watson</p>
+                    <p>Duration: 4 weeks</p>
+                    <p>Price: $179</p>
+                    <a href="#" class="cta">Enroll Now</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="course-category">
+            <h3><i class="fas fa-play-circle"></i> Video Courses</h3>
+            <div class="course-list">
+                <div class="course-item">
+                    <img src="/api/placeholder/303/200" alt="Detox 101: The Basics">
+                    <h4>Detox 101: The Basics</h4>
+                    <p>Instructor: Jane Doe</p>
+                    <p>Duration: Self-paced</p>
+                    <p>Price: $99</p>
+                    <a href="#" class="cta">Enroll Now</a>
+                </div>
+                <div class="course-item">
+                    <img src="/api/placeholder/304/200" alt="Gut Health Essentials">
+                    <h4>Gut Health Essentials</h4>
+                    <p>Instructor: Mike Johnson</p>
+                    <p>Duration: Self-paced</p>
+                    <p>Price: $149</p>
+                    <a href="#" class="cta">Enroll Now</a>
+                </div>
+                <div class="course-item">
+                    <img src="/api/placeholder/305/200" alt="Yoga for Detox">
+                    <h4>Yoga for Detox</h4>
+                    <p>Instructor: Lisa Chen</p>
+                    <p>Duration: Self-paced</p>
+                    <p>Price: $129</p>
+                    <a href="#" class="cta">Enroll Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="benefits" class="benefits">
+        <h2>Benefits of Our Program</h2>
+        <div class="benefit-item" data-aos="fade-up">
+            <i class="fas fa-heartbeat"></i>
+            <div>
+                <h3>Improved Vitality</h3>
+                <p>Experience a significant boost in energy and overall well-being.</p>
+            </div>
+        </div>
+        <div class="benefit-item" data-aos="fade-up">
+            <i class="fas fa-leaf"></i>
+            <div>
+                <h3>Natural Detox</h3>
+                <p>Cleanse your body naturally using expert-guided methods.</p>
+            </div>
+        </div>
+        <div class="benefit-item" data-aos="fade-up">
+            <i class="fas fa-users"></i>
+            <div>
+                <h3>Community Support</h3>
+                <p>Join a supportive community for motivation and guidance.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item" data-aos="fade-up">
+            <h3 class="faq-question">What is the detox program?</h3>
+            <div class="faq-item-content">
+                <p>The detox program is a comprehensive plan designed to help you cleanse your body of toxins and improve overall health. It includes dietary recommendations, supplements, and support through live sessions and video content.</p>
+            </div>
+        </div>
+        <div class="faq-item" data-aos="fade-up">
+            <h3 class="faq-question">How long is the program?</h3>
+            <div class="faq-item-content">
+                <p>The program typically lasts for 6 weeks, but there are also options for longer or shorter durations depending on your needs.</p>
+            </div>
+        </div>
+        <div class="faq-item" data-aos="fade-up">
+            <h3 class="faq-question">Do I need special equipment?</h3>
+            <div class="faq-item-content">
+                <p>No special equipment is required. You will need a computer or mobile device to access the online materials and participate in the live sessions.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#program">Our Program</a></li>
+                    <li><a href="#courses">Courses</a></li>
+                    <li><a href="#benefits">Benefits</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li>Email: info@detoxcourses.com</li>
+                    <li>Phone: +123 456 7890</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button id="scrollToTop"><i class="fas fa-chevron-up"></i></button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            AOS.init({
+                duration: 1200,
+            });
+
+            // FAQ Accordion
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                item.querySelector('.faq-question').addEventListener('click', () => {
+                    const content = item.querySelector('.faq-item-content');
+                    content.style.display = content.style.display === 'block' ? 'none' : 'block';
+                });
+            });
+
+            // Scroll to Top Button
+            const scrollToTopButton = document.getElementById('scrollToTop');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    scrollToTopButton.style.display = 'flex';
+                } else {
+                    scrollToTopButton.style.display = 'none';
+                }
+            });
+            scrollToTopButton.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+
+</html>
