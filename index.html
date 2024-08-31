@@ -142,12 +142,80 @@
 .quick-nav tbody tr:not(:first-child) {
     border-bottom: none; /* Tidak ada garis pembatas antara baris-baris berikutnya */
 }
+.pricing-container {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            gap: 10px;
+            padding: 20px;
+        }
+        .pricing-column-silver {
+            flex: 1;
+            max-width: 300px;
+            background-color: #c0c0c0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            justify-content: space-between;
+        }
+        .pricing-column-gold {
+            flex: 1;
+            max-width: 300px;
+            background-color: #ffd700;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            justify-content: space-between;
+        }
+        .pricing-column-platinum {
+            flex: 1;
+            max-width: 300px;
+            background-color: #e5e4e2;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            justify-content: space-between;     
 
+        }
+        .pricing-header {
+            color: black;
+            font-weight: bold;
+            text-align: center;
+            padding: 10px;
+            font-size: 1.2em;
+        }
+        .pricing-content {
+            padding: 15px;
+            font-size: 0.9em;
+            color: #000000;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .pricing-item {
+            margin-bottom: 10px;
+        }
+        .buy-button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: auto;
+            align-self: flex-end;
+        }
+        .platinum { background-color: #e5e4e2; }
+        .gold { background-color: #ffd700; }
+        .silver { background-color: #c0c0c0; }
  header {
-background-color: black;
-color: white;
-padding: 1em;
-    }
+    background-color: black;
+    color: white;
+    padding: 1em;
+        }
     .week {
         margin-bottom: 20px;
 
@@ -168,8 +236,11 @@ body {
 }
 
 .logo-img {
-    height: 120px; 
+    max-height: 120px; /* Tinggi maksimum 120px */
     width: auto;
+    height: auto; /* Tinggi otomatis mengikuti lebar */
+    max-width: 100%; /* Lebar maksimum 100% dari elemen induk */
+    object-fit: contain; /* Menjaga proporsi gambar */
 }
 
 .icon {
@@ -245,7 +316,69 @@ Over the next 6 weeks (and possibly more!) I will guide you through a comprehens
                         
 During our 6 weeks together, my aim is for you is not simply to do a deep detox of your colon, but to set the foundations for a brand new you. By establishing lifestyle support systems that are achievable and manageable, you will create consistency through applied action and breaking down of limiting beliefs and habits. The goal is not just to implement these teachings throughout the 6 weeks, but to incorporate them into your life in the long-term. By the end of this immersion, you will have gained a deeper understanding and attunement with your body, generating the confidence to pursue the things you love and enjoy true vitality.
                         </pre>
-                        
+                        <img src= "logo.jpg" class="logo2">
+                        <pre style="font-family: 'Helvetica Neue', sans-serif; font-weight: normal; text-align: left; white-space: pre-wrap;">
+During our 6 weeks together, my goal is for you to experience a significant and lasting transformation in how your body feels. These 6 weeks are just the beginning of a whole new you. You will start to establish simple and effective lifestyle support systems that you can maintain long after this cleanse. By the end of this immersion, you will have cleansed and cleared a significant amount of toxins and debris, laying the foundation for your body to truly heal itself. Additionally, you will gain a much deeper innerstanding and attunement with your body, giving you the confidence to pursue your passions at your highest potential.</pre>
+                        <div class="pricing-container">
+                            <div class="pricing-column-platinum">
+                                <div class="pricing-header platinum">PLATINUM</div>
+                                <div class="pricing-content">
+                                    <div class="pricing-item">6 × 90 min live Coaching Sessions</div>
+                                    <div class="pricing-item">6 × 45 min 1:1 Support</div>
+                                    <div class="pricing-item">Personalized Support in WhatsApp Group Chat</div>
+                                    <div class="pricing-item">Intestinal Detox Formula 1 and 2</div>
+                                    <div class="pricing-item">FB Group with Breathing Techniques, Somatic Releases, Health & Wellness Education and Lifestyle Hacks</div>
+                                    <div class="pricing-item">Investment $998 USD</div>
+                                    <div class="pricing-item">Payment Plan Option $200 USD Deposit 3 payments $300 USD</div>
+                                    <a href="#" class="buy-button">BUY</a>
+                                </div>
+                            </div>
+                            <div class="pricing-column-gold">
+                                <div class="pricing-header gold">GOLD</div>
+                                <div class="pricing-content">
+                                    <div class="pricing-item">6 × 90 min live Coaching Sessions</div>
+                                    <div class="pricing-item">Personalized Support in WhatsApp Group Chat</div>
+                                    <div class="pricing-item">Intestinal Detox Formula 1 and 2</div>
+                                    <div class="pricing-item">FB Group with Breathing Techniques, Somatic Releases, Health & Wellness Education and Lifestyle Hacks</div>
+                                    <div class="pricing-item">Investment $575 USD</div>
+                                    <div class="pricing-item">Payment Plan Option $200 USD Deposit 3 payments $150 USD</div>
+                                    <a href="#" class="buy-button">BUY</a>
+                                </div>
+                            </div>
+                            <div class="pricing-column-silver">
+                                <div class="pricing-header silver">SILVER</div>
+                                <div class="pricing-content">
+                                    <div class="pricing-item">Recordings of weekly coaching sessions</div>
+                                    <div class="pricing-item">Intestinal Detox Formula 1 and 2</div>
+                                    <div class="pricing-item">FB Group with Breathing Techniques, Somatic Releases, Health & Wellness Education and Lifestyle Hacks</div>
+                                    <div class="pricing-item">Investment $467 USD</div>
+                                    <div class="pricing-item">Payment Plan Option $200 USD Deposit 3 payments $105 USD</div>
+                                    <a href="#" class="buy-button">BUY</a>
+                                </div>
+                            </div>
+                        </div> 
+                        <pre style="font-family: 'Helvetica Neue', sans-serif; font-weight: normal; text-align: left; white-space: pre-wrap;">
+<i>
+For most people, I recommend the Gold Package. This detox is meant to be transformative, and as such, there will be moments where things will feel tough. It is highly valuable to be part of a group where you can ask questions, receive personalised support, and lean on the community.
+
+The Platinum Package has been designed for those with severe health issues that will require a deeper level of support on their healing journey.
+
+The Silver Package requires a high level of self-accountability and recommended only if you have done a fair bit of self-guided detoxes previously.
+
+Payment Plans available.
+</i>
+                        </pre>
+<img src="pemandangan.jpg" class = "pemandangan">
+<pre style="font-family: 'Helvetica Neue', sans-serif; font-weight: normal; text-align: left; white-space: pre-wrap;">
+    <bold>
+YOUR NEXT STEPS
+    </bold>
+Please reach out directly to either Vaughan or Dona for your payment link. Once your payment has been received, you will receive our comprehensive Tranformational Detox Booklet which will help to prepare you for our upcoming journey together.
+
+<bold>
+SEE YOU ON THE INSIDE
+</bold>
+</pre>
                 </section>
                 <section id ="program" class="mt-5">
                     <h2 class="section-title">Getting the most our of this program</h2>
