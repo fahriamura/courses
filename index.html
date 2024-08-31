@@ -70,6 +70,7 @@
     position: sticky;
     top: 15px;
     z-index: 1000; 
+    margin-bottom: 20px;
 }
 .footer {
             background-color: rgb(0, 0, 0);
@@ -111,14 +112,33 @@
         margin-bottom: 20px; 
     }
 .fungi-img {
-        object-fit: cover;  
-        margin-bottom: 40px;
-    }
+    width: 100%;         /* Mengatur lebar gambar agar selalu 100% dari kontainer induk */
+    height: auto;        /* Menjaga aspek rasio gambar */
+    object-fit: cover;   /* Memastikan gambar menutupi seluruh area kontainer tanpa distorsi */
+    max-width: 100%;     /* Mencegah gambar meluap dari kontainer induk */
+    margin-bottom: 40px; /* Jarak bawah 40px */
+}
+.fungis-img {
+    width: 100%;         /* Mengatur lebar gambar agar selalu 100% dari kontainer induk */
+    height: auto;        /* Menjaga aspek rasio gambar */
+    object-fit: cover;   /* Memastikan gambar menutupi seluruh area kontainer tanpa distorsi */
+    max-width: 50%;     /* Mencegah gambar meluap dari kontainer induk */
+    margin-bottom: 40px; /* Jarak bawah 40px */
+    display: block;      /* Mengubah gambar menjadi block-level element */
+    margin-left: auto;   /* Memusatkan gambar secara horizontal */
+    margin-right: auto;  /
+}
 .quick-nav th {
     background-color: #4a91e200; 
     color: #ffffff; 
     padding: 10px; 
     text-align: left; 
+}
+
+.logo2{
+    display: block;      /* Mengubah gambar menjadi block-level element */
+    margin-left: auto;   /* Memusatkan gambar secara horizontal */
+    margin-right: auto;  /
 }
 
 .quick-nav td {
@@ -143,74 +163,85 @@
     border-bottom: none; /* Tidak ada garis pembatas antara baris-baris berikutnya */
 }
 .pricing-container {
-            display: flex;
-            justify-content: center;
-            align-items: stretch;
-            gap: 10px;
-            padding: 20px;
-        }
-        .pricing-column-silver {
-            flex: 1;
-            max-width: 300px;
-            background-color: #c0c0c0;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            justify-content: space-between;
-        }
-        .pricing-column-gold {
-            flex: 1;
-            max-width: 300px;
-            background-color: #ffd700;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            justify-content: space-between;
-        }
-        .pricing-column-platinum {
-            flex: 1;
-            max-width: 300px;
-            background-color: #e5e4e2;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            justify-content: space-between;     
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 20px;  /* Berikan ruang antara kolom */
+    padding: 20px;
+    flex-wrap: wrap;  /* Memungkinkan kolom untuk melipat menjadi baris saat diperlukan */
+}
 
-        }
-        .pricing-header {
-            color: black;
-            font-weight: bold;
-            text-align: center;
-            padding: 10px;
-            font-size: 1.2em;
-        }
-        .pricing-content {
-            padding: 15px;
-            font-size: 0.9em;
-            color: #000000;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-        .pricing-item {
-            margin-bottom: 10px;
-        }
-        .buy-button {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            background-color: #333;
-            color: white;
-            text-align: center;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: auto;
-            align-self: flex-end;
-        }
-        .platinum { background-color: #e5e4e2; }
-        .gold { background-color: #ffd700; }
-        .silver { background-color: #c0c0c0; }
+.pricing-column {
+    flex: 1;
+    max-width: 300px;
+    background-color: #e5e4e2;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 20px; /* Tambahkan jarak bawah untuk tata letak kolom */
+}
+
+.pricing-header {
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    font-size: 1.2em;
+}
+
+.pricing-content {
+    padding: 15px;
+    font-size: 0.9em;
+    color: #000000;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.pricing-item {
+    margin-bottom: 10px;
+}
+
+.buy-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: auto;
+    align-self: flex-end;
+}
+
+.platinum { background-color: #e5e4e2; }
+.gold { background-color: #ffd700; }
+.silver { background-color: #c0c0c0; }
+
+/* Media Queries untuk menyesuaikan tata letak */
+@media (max-width: 768px) {
+    .pricing-container {
+        flex-direction: column; /* Ubah kolom menjadi baris saat layar sempit */
+        align-items: center;
+    }
+
+    .pricing-column {
+        max-width: 90%; /* Kolom akan menempati 90% dari lebar layar */
+        margin-bottom: 20px; /* Tambahkan margin bawah untuk spasi antar kolom */
+    }
+}
+
+@media (min-width: 769px) {
+    .pricing-column {
+        max-width: 300px; /* Kolom tetap memiliki lebar maksimal 300px pada layar yang lebih besar */
+    }
+}
+
  header {
     background-color: black;
     color: white;
@@ -235,12 +266,12 @@ body {
     background-color: #000000;
 }
 
-.logo-img {
-    max-height: 120px; /* Tinggi maksimum 120px */
-    width: auto;
+.navbar .logo-img {
+    width: 100%; /* Lebar 100% dari elemen induk */
     height: auto; /* Tinggi otomatis mengikuti lebar */
-    max-width: 100%; /* Lebar maksimum 100% dari elemen induk */
+    max-width: 200px; /* Lebar maksimum logo */
     object-fit: contain; /* Menjaga proporsi gambar */
+    margin-top: 10px;
 }
 
 .icon {
@@ -319,44 +350,45 @@ During our 6 weeks together, my aim is for you is not simply to do a deep detox 
                         <img src= "logo.jpg" class="logo2">
                         <pre style="font-family: 'Helvetica Neue', sans-serif; font-weight: normal; text-align: left; white-space: pre-wrap;">
 During our 6 weeks together, my goal is for you to experience a significant and lasting transformation in how your body feels. These 6 weeks are just the beginning of a whole new you. You will start to establish simple and effective lifestyle support systems that you can maintain long after this cleanse. By the end of this immersion, you will have cleansed and cleared a significant amount of toxins and debris, laying the foundation for your body to truly heal itself. Additionally, you will gain a much deeper innerstanding and attunement with your body, giving you the confidence to pursue your passions at your highest potential.</pre>
-                        <div class="pricing-container">
-                            <div class="pricing-column-platinum">
-                                <div class="pricing-header platinum">PLATINUM</div>
-                                <div class="pricing-content">
-                                    <div class="pricing-item">6 × 90 min live Coaching Sessions</div>
-                                    <div class="pricing-item">6 × 45 min 1:1 Support</div>
-                                    <div class="pricing-item">Personalized Support in WhatsApp Group Chat</div>
-                                    <div class="pricing-item">Intestinal Detox Formula 1 and 2</div>
-                                    <div class="pricing-item">FB Group with Breathing Techniques, Somatic Releases, Health & Wellness Education and Lifestyle Hacks</div>
-                                    <div class="pricing-item">Investment $998 USD</div>
-                                    <div class="pricing-item">Payment Plan Option $200 USD Deposit 3 payments $300 USD</div>
-                                    <a href="#" class="buy-button">BUY</a>
-                                </div>
-                            </div>
-                            <div class="pricing-column-gold">
-                                <div class="pricing-header gold">GOLD</div>
-                                <div class="pricing-content">
-                                    <div class="pricing-item">6 × 90 min live Coaching Sessions</div>
-                                    <div class="pricing-item">Personalized Support in WhatsApp Group Chat</div>
-                                    <div class="pricing-item">Intestinal Detox Formula 1 and 2</div>
-                                    <div class="pricing-item">FB Group with Breathing Techniques, Somatic Releases, Health & Wellness Education and Lifestyle Hacks</div>
-                                    <div class="pricing-item">Investment $575 USD</div>
-                                    <div class="pricing-item">Payment Plan Option $200 USD Deposit 3 payments $150 USD</div>
-                                    <a href="#" class="buy-button">BUY</a>
-                                </div>
-                            </div>
-                            <div class="pricing-column-silver">
-                                <div class="pricing-header silver">SILVER</div>
-                                <div class="pricing-content">
-                                    <div class="pricing-item">Recordings of weekly coaching sessions</div>
-                                    <div class="pricing-item">Intestinal Detox Formula 1 and 2</div>
-                                    <div class="pricing-item">FB Group with Breathing Techniques, Somatic Releases, Health & Wellness Education and Lifestyle Hacks</div>
-                                    <div class="pricing-item">Investment $467 USD</div>
-                                    <div class="pricing-item">Payment Plan Option $200 USD Deposit 3 payments $105 USD</div>
-                                    <a href="#" class="buy-button">BUY</a>
-                                </div>
-                            </div>
-                        </div> 
+<div class="pricing-container">
+    <div class="pricing-column platinum">
+        <div class="pricing-header">PLATINUM</div>
+        <div class="pricing-content">
+            <div class="pricing-item">6 × 90 min live Coaching Sessions</div>
+            <div class="pricing-item">6 × 45 min 1:1 Support</div>
+            <div class="pricing-item">Personalized Support in WhatsApp Group Chat</div>
+            <div class="pricing-item">Intestinal Detox Formula 1 and 2</div>
+            <div class="pricing-item">FB Group with Breathing Techniques, Somatic Releases, Health & Wellness Education and Lifestyle Hacks</div>
+            <div class="pricing-item">Investment $998 USD</div>
+            <div class="pricing-item">Payment Plan Option $200 USD Deposit 3 payments $300 USD</div>
+            <a href="#" class="buy-button">BUY</a>
+        </div>
+    </div>
+    <div class="pricing-column gold">
+        <div class="pricing-header">GOLD</div>
+        <div class="pricing-content">
+            <div class="pricing-item">6 × 90 min live Coaching Sessions</div>
+            <div class="pricing-item">Personalized Support in WhatsApp Group Chat</div>
+            <div class="pricing-item">Intestinal Detox Formula 1 and 2</div>
+            <div class="pricing-item">FB Group with Breathing Techniques, Somatic Releases, Health & Wellness Education and Lifestyle Hacks</div>
+            <div class="pricing-item">Investment $575 USD</div>
+            <div class="pricing-item">Payment Plan Option $200 USD Deposit 3 payments $150 USD</div>
+            <a href="#" class="buy-button">BUY</a>
+        </div>
+    </div>
+    <div class="pricing-column silver">
+        <div class="pricing-header">SILVER</div>
+        <div class="pricing-content">
+            <div class="pricing-item">Recordings of weekly coaching sessions</div>
+            <div class="pricing-item">Intestinal Detox Formula 1 and 2</div>
+            <div class="pricing-item">FB Group with Breathing Techniques, Somatic Releases, Health & Wellness Education and Lifestyle Hacks</div>
+            <div class="pricing-item">Investment $467 USD</div>
+            <div class="pricing-item">Payment Plan Option $200 USD Deposit 3 payments $105 USD</div>
+            <a href="#" class="buy-button">BUY</a>
+        </div>
+    </div>
+</div>
+
                         <pre style="font-family: 'Helvetica Neue', sans-serif; font-weight: normal; text-align: left; white-space: pre-wrap;">
 <i>
 For most people, I recommend the Gold Package. This detox is meant to be transformative, and as such, there will be moments where things will feel tough. It is highly valuable to be part of a group where you can ask questions, receive personalised support, and lean on the community.
@@ -368,7 +400,7 @@ The Silver Package requires a high level of self-accountability and recommended 
 Payment Plans available.
 </i>
                         </pre>
-<img src="pemandangan.jpg" class = "pemandangan">
+<img src="pemandangan.jpg" class = "fungi-img">
 <pre style="font-family: 'Helvetica Neue', sans-serif; font-weight: normal; text-align: left; white-space: pre-wrap;">
     <bold>
 YOUR NEXT STEPS
@@ -405,7 +437,7 @@ The presence of parasites and fungal overgrowths manifest in a wide range of sym
                         
 It is essential for lasting vitality, that we regularly do a deep fungal parasite colon cleanse in order to bring out bodies back to homeostasis, and then they can do what they were designed to do…we can heal from anything.
                         </pre>
-                        <img src="fungi.jpg" class="fungi-img">
+                        <img src="fungi.jpg" class="fungis-img">
 
                 </section>
                 <section id ="aim" class="mt-5">
