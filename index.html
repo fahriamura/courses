@@ -30,11 +30,25 @@
             color: white;
             padding: 100px 0;
         }
+        .hero-section .V {
+    font-weight: 900; /* Ketebalan font maksimal yang umumnya didukung */
+    margin: 0; /* Menghilangkan jarak atas dan bawah */
+    padding: 0; /* Menghilangkan padding jika ada */
+}
         .section-title {
             background-color: #000000;
             color: #ffffff;
             margin-bottom: 30px;
+            font-weight: 700;
 
+        }
+        .pheader2{
+            font-weight: 600;
+            font-size: 18px;
+        }
+        .pheader3{
+            font-weight: 600;
+            font-size: 20px;
         }
         table {
             background-color: #f8f9fa00;
@@ -73,6 +87,7 @@
     margin-bottom: 20px;
 }
 .footer {
+            margin-top: 20px;
             background-color: rgb(0, 0, 0);
             color: white;
             padding: 10px;
@@ -154,6 +169,136 @@
     color: #08d947; 
     text-decoration: none; 
 }
+.container2 {
+    background-image: url('fungi.jpg');
+    background-size: cover;
+    width: 100%;
+    max-width: 100%;
+}
+.container3 {
+    background-image: url('essen.jpg');
+    background-size: cover;
+    padding: 50px;
+    width: 100%;
+    max-width: 70%;
+
+    display: block;      /* Mengubah gambar menjadi block-level element */
+    margin-left: auto;   /* Memusatkan gambar secara horizontal */
+    margin-right: auto;
+    margin-bottom: 40px;
+}
+.container4 {
+    background-image: url('sit.jpg');
+    background-size: cover;
+    padding: 20px;
+    width: 100%;
+    max-width: 90%;
+
+    display: block;      /* Mengubah gambar menjadi block-level element */
+    margin-left: auto;   /* Memusatkan gambar secara horizontal */
+    margin-right: auto;
+    margin-bottom: 40px;
+}
+.container5 {
+    background-image: url('last.jpg');
+    background-size: cover;
+    padding: 20px;
+    width: 100%;
+    max-width: 80%;
+
+    display: block;      /* Mengubah gambar menjadi block-level element */
+    margin-left: auto;   /* Memusatkan gambar secara horizontal */
+    margin-right: auto;
+    margin-bottom: 40px;
+}
+.text-block-essen {
+    justify-content: center; /* Menyelaraskan item secara horizontal di tengah */
+    text-align: center; /* Menyelaraskan teks di dalam elemen */
+    height: 100%; /* Atur tinggi elemen sesuai kebutuhan */
+}
+.text-block-sit {
+    justify-content: center; /* Menyelaraskan item secara horizontal di tengah */
+    text-align: center; /* Menyelaraskan teks di dalam elemen */
+    height: 100%; /* Atur tinggi elemen sesuai kebutuhan */
+    font-weight: 1000;
+}
+.text-block-last {
+    justify-content: center; /* Menyelaraskan item secara horizontal di tengah */
+    text-align: center; /* Menyelaraskan teks di dalam elemen */
+    height: 100%; /* Atur tinggi elemen sesuai kebutuhan */
+
+    .h2{
+        font-weight: 500;
+    } 
+}
+@media (max-width: 600px) {
+    .container2 {
+        background: url('fungi.jpg');
+        background-size: contain;
+        width: 100%;
+    }
+    .container3 {
+        background: url('essen.jpg');
+        background-size: contain;
+        width: 100%;
+        max-width: 100%;
+        background-repeat: no-repeat;
+        display: block;      /* Mengubah gambar menjadi block-level element */
+        margin-left: auto;   /* Memusatkan gambar secara horizontal */
+        margin-right: auto;
+    }
+    .container4 {
+        background: url('sit.jpg');
+        background-size: contain;
+        width: 100%;
+        max-width: 100%;
+        background-repeat: no-repeat;
+        display: block;      /* Mengubah gambar menjadi block-level element */
+        margin-left: auto;   /* Memusatkan gambar secara horizontal */
+        margin-right: auto;
+    }
+    .container5 {
+        background: url('last.jpg');
+        background-size: contain;
+        width: 100%;
+        max-width: 80%; 
+
+        display: block;      /* Mengubah gambar menjadi block-level element */
+        margin-left: auto;   /* Memusatkan gambar secara horizontal */
+        margin-right: auto;
+    }
+    .text-block-sit{
+        justify-content: center; /* Menyelaraskan item secara horizontal di tengah */
+    text-align: center; /* Menyelaraskan teks di dalam elemen */
+    height: 100%; /* Atur tinggi elemen sesuai kebutuhan */
+    font-weight: 600;
+    }
+    .text-block-last {
+    font-size: 12px;
+    justify-content: center; /* Menyelaraskan item secara horizontal di tengah */
+    text-align: center; /* Menyelaraskan teks di dalam elemen */
+
+
+    .h2{
+        font-weight: 500;
+    } 
+}
+
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0); /* Dark overlay to make text readable */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.text-block {
+    margin-bottom: 40px;
+}
 
 .quick-nav thead tr {
     border-bottom: 1px solid #ffffff; /* Garis pembatas antara header dan baris pertama */
@@ -222,7 +367,14 @@
 .platinum { background-color: #e5e4e2; }
 .gold { background-color: #ffd700; }
 .silver { background-color: #c0c0c0; }
-
+.logo2{
+    width: 100%; /* Lebar 100% dari elemen induk */
+    height: auto; /* Tinggi otomatis mengikuti lebar */
+    max-width: 50%; /* Lebar maksimum logo */
+    object-fit: contain; /* Menjaga proporsi gambar */
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
 /* Media Queries untuk menyesuaikan tata letak */
 @media (max-width: 768px) {
     .pricing-container {
@@ -283,6 +435,10 @@ body {
 .icon:hover {
     opacity: 0.7; /* Optional: add hover effect */
 }
+
+.pheader{
+    font-weight:1000;
+}
     </style>
 </head>
 <body>
@@ -301,7 +457,7 @@ body {
 
     <header class="hero-section text-center">
         <div class="container">
-            <h1 class="display-4">Transformational Detox</h1>
+            <h1 class="display-4">TRANSFORMATIONAL DETOX</h1>
             <img src="headers.jpg" class="header-img">
         </div>
     </header>
@@ -437,7 +593,23 @@ The presence of parasites and fungal overgrowths manifest in a wide range of sym
                         
 It is essential for lasting vitality, that we regularly do a deep fungal parasite colon cleanse in order to bring out bodies back to homeostasis, and then they can do what they were designed to do…we can heal from anything.
                         </pre>
-                        <img src="fungi.jpg" class="fungis-img">
+                        <div class="container2">
+                            <div class="overlay">
+                                <div class="text-block">
+                                    <h2>FUNGI</h2>
+                                    <p>
+                                        A group of living organisms which are classified in their own kingdom. This means they are not animals, plants, or bacteria.
+                                        Unlike bacteria, which have simple prokaryotic cells, fungi have complex eukaryotic cells like animals and plants.
+                                    </p>
+                                </div>
+                                <div class="text-block2">
+                                    <h2>PARASITE</h2>
+                                    <p>
+                                        An organism that lives in or on an organism of another species and benefits by deriving nutrients at the other’s expense.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
 
                 </section>
                 <section id ="aim" class="mt-5">
@@ -460,7 +632,7 @@ In weeks 2 & 3, expect to have some bowel irregularity while your body detoxes a
                         
 You will be eliminating many of your favourite foods and drinks, and adding in new practices which may feel a bit overwhelming. But you’ll settle into the program and find your flow with it in no time. If you do happen to break the program, don’t be discouraged. Just simply continue the program to the best of your ability. I don’t expect perfection. But I do expect that you notice what feels hard, recognize your sabotage patterns, and choose differently the next time they come up.
                         
-<strong>Breaking down of old patterns and stories is where the transformation begins.</strong>
+<strong><bold>Breaking down of old patterns and stories is where the transformation begins.</bold></strong>
                         
 It is very likely that you will feel worse before you feel better. This is due to the fact you will have tens of millions of bacterial and parasitic organisms dying off inside your system. Your body will systematically destroy and eliminate the atrophied pathogens, however you may experience discomfort, bloating, low moods, and irritability during the process. If at any time you feel overwhelmed by what you are experiencing, please reach out to me. I never want you to feel as if you are alone and unsupported.
                         
@@ -470,30 +642,30 @@ This is the beginning of the new you!
                     </pre>
                 </section>
                 
-                <section id ="Ready" class="mt-5">
+                <section id ="ready" class="mt-5">
                     <h2 class="section-title">Getting Ready</h2>
                     <pre style="font-family: 'Helvetica Neue', sans-serif; font-weight: normal; text-align: left; white-space: pre-wrap;">
 The more time you can give yourself to prepare – the more successful you will be!
                         
-<strong> Down, Noticing + Taking Action</strong> 
+<strong class="pheader3">Down, Noticing + Taking Action</strong> 
                         
 You will get out of this program what you put in. Please be sure to carve out a little extra space for yourself over the course of these 6-weeks to not only attend our live calls and implement what is being shared…but to slow down enough to notice what is coming up for you. This is truly where the transformational aspect of this comes in.
                         
-<strong>Be Open & Teachable </strong>
+<strong class="pheader3">Be Open & Teachable </strong>
                         
 You may have been on a healing journey for many years, and have ideas of what’s right vs wrong. I ask that you put all of that aside, and instead be open and willing to take on new information. Teachability is one of the highest measures of success in this program. If you are not teachable, you will likely repeat sabotage patterns and therefore continue to replicate the same outcomes/habits that got you here in the first place.
                         
-<strong> Check-Ins </strong>(Platinum + Gold only)
+<strong class="pheader3">Check-Ins </strong>(Platinum + Gold only)
                         
 I expect honest & transparent check-ins about where you’re at, issues that are arising, struggles that you are having, etc. I can only support you in my highest capacity, when I know the truth of what is coming up for you. Please don’t hold back. And yes, get comfortable with the idea of taking photos of your poop and sending them to me daily.
                         
-<strong> Set yourself up for success. </strong>
+<strong class="pheader3">Set yourself up for success. </strong>
                         
 Over the next few weeks, begin to prepare yourself for the transformation that is about to take place. As soon as you said YES to this program, energetically your body has begun to prepare itself and you may notice emotions begin to arise….that’s ok, just allow it. Be sure to familiarise yourself with the protocol that is outlined in this booklet, and begin to gather the recommended supplements so that you are ready to go for Week 1!
                     </pre>
                         
     
-                <section id="supplements" class="mt-5">
+                <section id="supplement" class="mt-5">
                     <h2 class="section-title">Recommended Supplements</h2>
                     <pre style="font-family: 'Helvetica Neue', sans-serif; font-weight: normal; text-align: left; white-space: pre-wrap;">
 The Eden Health IDF #1 and #2 are included in the price of this program and will be shipped directly to you. Please do not go out and purchase on your own.
@@ -775,25 +947,36 @@ Please steer clear of seed and vegetable oils.
                         
                 </section>
                 <section id = "suggest" class="mt-5">
-                    <img src = "essen.jpg" class="fungi-img">
+                    <div class="container3">
+                        <div class="overlay">
+                            <div class="text-block-essen">
+                                <h2><i>Keep It Super Simple</i></h2>
+                                <p class="mains">
+                                For the duration of this cleanse, eat simple, whole foods. Avoid anything that comes in a box, can 
+                                frozen, or a bag. When you're uncertain, err on the side of caution and just avoid it. Eat Foods
+                                that are as close to their natural state as possible.   
+                                </p>
+                            </div>
+                        </div>
+                    </div>
 
                     <h2 class="section-title">Essentials Supplies</h2>
 <div>
-    <p class=" header">
+    <p class=" pheader2">
         Neti pot and salts
     </p>
     <p>
         A powerful tool to help move toxins out of the sinus cavity. We recommend using a netty pot 1-2x per week throughout the 6 week course
     </p>
     <img src="f.jpg" alt="Neti pot" class="neti-pot-image">
-    <p class=" header">
+    <p class = "pheader2">
         Tongue scraper
     </p>
     <p>
         As we sleep, toxins accumulate on our tongues. Scraping the tongue ?rst thing upon waking is an important part of the detox process. Ensure your tongue scraper is stainless-steel or cooper, absolutely not plastic!
     </p>
     <img src="d.jpg" alt="Neti pot" class="neti-pot-image">
-    <p class=" header">
+    <p class = "pheader2">
         Natural bristle brush (for body)
     </p>
 
@@ -801,14 +984,14 @@ Please steer clear of seed and vegetable oils.
         Dry brushing helps to slough off dead cells and excess toxins from the skin, while also stimulating the lymphatic system.
     </p>
     <img src="c.jpg" alt="Neti pot" class="neti-pot-image">
-    <p class=" header">
+    <p class = "pheader2">
         Floss
     </p>
     <p>
         Our gums are linked directly to our nervous system. When bacteria and toxins remain trapped between the teeth they get embedded in the gums and create chronic in]ammation
     </p>
     <img src="aa.jpg" alt="Neti pot" class="neti-pot-image">
-    <p class=" header">
+    <p class = "pheader2">
         Diary or Journal
     </p>
     <p>
@@ -819,7 +1002,7 @@ body. A daily journaling practice is an essential
 part of your next 6 weeks
     </p>
     <img src="e.jpg" alt="Neti pot" class="neti-pot-image">
-    <p class=" header">
+    <p class = "pheader2">
         Yoga mat
     </p>
     <p>
@@ -888,6 +1071,26 @@ Appox 20 minutes later, enjoy a cup of warm lemon water with cayenne pepper whil
 Take IDF #1 capsules. I recommend starting with 1 capsule, and increasing by 1 capsule per day until the desired consistency and quantity of stooling is achieved. You should be passing stool 1-3 times per day that is the consistency of toothpaste and approx 6 inches/20cm in length.Eat breakfast. Remember, this should be your largest meal of the day. See our meal plans and recipes in the Facebook group                        
                                                    
                         </pre>
+                        <div class="container4">
+                            <div class="overlay">
+                                <div class="text-block-sit">
+                                  
+                                    <p class="mains">
+                                    <bold>
+                                        SIT IN GRATITUDE FOR A MINIMUM OF 5-10 MINUTES
+                                        BOTH IN THE AM AND IN THE PM. 
+                                    </bold> 
+                                    </p>
+                                    <p class="mains">
+                                        <bold>
+                                            THIS PRACTICES ALINE WILL BEGIN TO PROFOUDLY
+                                            SHIFT YOUR EXPERIENCE IN LIFE.
+                                        </bold>
+                                        
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
                         <p class = pheader>
                             THINGS TO NOTE
                         </p>
@@ -904,23 +1107,60 @@ Avoid eating within 3 hours of bed and no drinking liquid 1-2 hours before bed.
 
 During this phase be prepared to experience periods of low energy, skin breakouts, headaches, irritability, mood swings and cravings
 </pre>                        
-
+<div class="container5">
+    <div class="overlay">
+        <div class="text-block-last">
+          <h2>
+            DAILY
+          </h2>
+          <p>
+            IDF #1
+          </p>
+          <p>
+            Zone Exercise
+          </p>
+          <p>
+            3 R's - Reflection, Refractory Period & Re-phrase Gratitude Practice
+          </p>
+          <h2>
+            1-2X/WEEK
+          </h2>
+          <p>
+            Infrared sauna or epsom bath
+          </p>
+          <p>
+            Early morning sun (before 9am) on exposed skin + 
+            sun gazing
+          </p>
+          <p> 
+            lymphatic drainage massage
+          </p>
+          <h2>
+            AS MUCH AS POSSIBLE
+          </h2>
+          <p>
+            Get into nature(waterfalls,ocean,forest)
+            Put your barefeet on the earth (grounding)
+          </p>
+        </div>
+    </div>
+</div>
                         <p class = pheader>
                             YOUR EVENING ROUTINE
                         </p>
-                        <p>Journaling</p>
+                        <p class = pheader2>Journaling</p>
                         <pre style="font-family: 'Helvetica Neue', sans-serif; font-weight: normal; text-align: left; white-space: pre-wrap;">
 Set yourself up for success. In week 1, you’ll learn about the 3 R’s — Reflection, Refractory, and Reframe. Get in the habit of reviewing your 3 R’s nightly. Then write out 3 things that are priorities to get done for the following day. This primes the unconscious/subconscious brain so we don’t distract ourselves and we begin to notice any sabotaging patterns.
                         </pre>
                         
-                        <p>Approx 2 hours before bed</p>
+                        <p class = pheader2>Approx 2 hours before bed</p>
                         <pre style="font-family: 'Helvetica Neue', sans-serif; font-weight: normal; text-align: left; white-space: pre-wrap;">
 Have a cup of tea. Chamomile tea is well-known to help your nervous system relax. But when we pair it with glycine (found in collagen), it becomes a potent sleep-aid.
                         
 Turn down the lights and get off screens. Artificial light is detrimental to our sleep cycles. As such, we recommend turning off lights + screens, and lighting candles. Implementing this simple change alone, will result in significant shifts in the quality of your sleep.
                         </pre>
                         
-                        <p>Before Bed</p>
+                        <p class = pheader2>Before Bed</p>
                         <pre style="font-family: 'Helvetica Neue', sans-serif; font-weight: normal; text-align: left; white-space: pre-wrap;">
 Nice gentle stretching or Zone Exercises. Connecting with your breath and doing slow, intentional stretching at night before bed helps to relax the nervous system and improve circadian rhythm.
                         </pre>
