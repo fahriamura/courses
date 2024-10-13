@@ -1,0 +1,376 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Manrope%3Awght%40400%3B500%3B700%3B800&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"
+    />
+
+    <title>Galileo Design</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  </head>
+  <style>
+/* General modal styles */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1000; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal content centered */
+.modal .modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fefefe;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 500px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+</style>
+  <body>
+    <div class="relative flex size-full min-h-screen flex-col bg-[#f8fbfa] group/design-root overflow-x-hidden" style='font-family: Manrope, "Noto Sans", sans-serif;'>
+      <div class="layout-container flex h-full grow flex-col">
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#e8f3ec] px-10 py-3">
+          <div class="flex items-center gap-4 text-[#0e1b13]">
+            <div class="size-4">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M44 4H30.6666V17.3334H17.3334V30.6666H4V44H44V4Z" fill="currentColor"></path></svg>
+            </div>
+            <h2 class="text-[#0e1b13] text-lg font-bold leading-tight tracking-[-0.015em]">Health Detox</h2>
+          </div>
+          <div class="flex flex-1 justify-end gap-8">
+            <div class="flex items-center gap-9">
+              <a class="text-[#0e1b13] text-sm font-medium leading-normal" href="#">Home</a>
+              <a class="text-[#0e1b13] text-sm font-medium leading-normal" href="#">Courses</a>
+              <a class="text-[#0e1b13] text-sm font-medium leading-normal" href="#">Community</a>
+              <a class="text-[#0e1b13] text-sm font-medium leading-normal" href="#">Events</a>
+              <a class="text-[#0e1b13] text-sm font-medium leading-normal" href="#">Resources</a>
+            </div>
+            <div class="flex gap-2">
+              <button
+                class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 bg-[#e8f3ec] text-[#0e1b13] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5"
+              >
+                <div class="text-[#0e1b13]" data-icon="Bell" data-size="20px" data-weight="regular">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                    <path
+                      d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216ZM48,184c7.7-13.24,16-43.92,16-80a64,64,0,1,1,128,0c0,36.05,8.28,66.73,16,80Z"
+                    ></path>
+                  </svg>
+                </div>
+              </button>
+              <button
+                class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 bg-[#e8f3ec] text-[#0e1b13] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5"
+              >
+                <div class="text-[#0e1b13]" data-icon="MagnifyingGlass" data-size="20px" data-weight="regular">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                    <path
+                      d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"
+                    ></path>
+                  </svg>
+                </div>
+              </button>
+              <button
+                class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 bg-[#e8f3ec] text-[#0e1b13] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5"
+              >
+                <div class="text-[#0e1b13]" data-icon="User" data-size="20px" data-weight="regular">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                    <path
+                      d="M230.92,212c-15.23-26.33-38.7-45.21-66.09-54.16a72,72,0,1,0-73.66,0C63.78,166.78,40.31,185.66,25.08,212a8,8,0,1,0,13.85,8c18.84-32.56,52.14-52,89.07-52s70.23,19.44,89.07,52a8,8,0,1,0,13.85-8ZM72,96a56,56,0,1,1,56,56A56.06,56.06,0,0,1,72,96Z"
+                    ></path>
+                  </svg>
+                </div>
+              </button>
+            </div>
+          </div>
+        </header>
+        <div class="px-40 flex flex-1 justify-center py-5">
+          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+            <div class="flex flex-wrap justify-between gap-3 p-4">
+              <div class="flex min-w-72 flex-col gap-3">
+                <p class="text-[#0e1b13] tracking-light text-[32px] font-bold leading-tight">Your Subscription</p>
+                <p class="text-[#50956d] text-sm font-normal leading-normal">Get access to all courses, workshops, and live events. Courses never expire.</p>
+              </div>
+            </div>
+            <h3 class="text-[#0e1b13] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4 grid grid-cols-[auto_1fr_auto] items-center gap-12">
+              <span>Courses</span>
+              <button 
+                class="bg-[#50956d] text-white text-base font-medium py-2 px-4 rounded-lg justify-self-start"
+                onclick="openAddCourseDialog()"
+              >
+                Add Course
+              </button>
+              <span></span> <!-- Placeholder untuk menjaga simetri -->
+            </h3>
+            <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,0fr))] gap-3 p-4">
+              <div class="flex flex-col gap-3 pb-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl"
+                  style='background-image: url("https://cdn.usegalileo.ai/stability/dfc09596-e271-4233-8eb3-0124ea0bd888.png");'
+                ></div>
+                <div>
+                  <p class="text-[#0e1b13] text-base font-medium leading-normal">Detox Your Health</p>
+                  <p class="text-[#50956d] text-sm font-normal leading-normal">7 Lessons</p>
+                  <p class="text-[#50956d] text-sm font-normal leading-normal">Starts in 3 days</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-3 pb-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl"
+                  style='background-image: url("https://cdn.usegalileo.ai/sdxl10/0b6b543f-bdbb-4718-a017-b7c4b9ef2f5a.png");'
+                ></div>
+                <div>
+                  <p class="text-[#0e1b13] text-base font-medium leading-normal">Fasting for Beginners</p>
+                  <p class="text-[#50956d] text-sm font-normal leading-normal">5 Lessons</p>
+                  <p class="text-[#50956d] text-sm font-normal leading-normal">Starts in 5 days</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-3 pb-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl"
+                  style='background-image: url("https://cdn.usegalileo.ai/sdxl10/26783dc5-5c03-4c85-9309-b1465509aea7.png");'
+                ></div>
+                <div>
+                  <p class="text-[#0e1b13] text-base font-medium leading-normal">Mindful Eating</p>
+                  <p class="text-[#50956d] text-sm font-normal leading-normal">4 Lessons</p>
+                  <p class="text-[#50956d] text-sm font-normal leading-normal">Starts in 7 days</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-3 pb-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl"
+                  style='background-image: url("https://cdn.usegalileo.ai/sdxl10/c270b39e-934e-4900-902a-addfa66ad609.png");'
+                ></div>
+                <div>
+                  <p class="text-[#0e1b13] text-base font-medium leading-normal">Plant-Based Nutrition</p>
+                  <p class="text-[#50956d] text-sm font-normal leading-normal">6 Lessons</p>
+                  <p class="text-[#50956d] text-sm font-normal leading-normal">Starts in 9 days</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-3 pb-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl"
+                  style='background-image: url("https://cdn.usegalileo.ai/sdxl10/0186a326-5c49-41c3-b430-9dc8b430423a.png");'
+                ></div>
+                <div>
+                  <p class="text-[#0e1b13] text-base font-medium leading-normal">Gut Health 101</p>
+                  <p class="text-[#50956d] text-sm font-normal leading-normal">8 Lessons</p>
+                  <p class="text-[#50956d] text-sm font-normal leading-normal">Starts in 11 days</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-3 pb-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl"
+                  style='background-image: url("https://cdn.usegalileo.ai/stability/0f501846-8d42-470e-a29a-786bbd2434bd.png");'
+                ></div>
+                <div>
+                  <p class="text-[#0e1b13] text-base font-medium leading-normal">Stress Management</p>
+                  <p class="text-[#50956d] text-sm font-normal leading-normal">5 Lessons</p>
+                  <p class="text-[#50956d] text-sm font-normal leading-normal">Starts in 13 days</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-3 pb-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl"
+                  style='background-image: url("https://cdn.usegalileo.ai/sdxl10/b29fcd87-37a5-462e-87d3-617cca26192c.png");'
+                ></div>
+                <div>
+                  <p class="text-[#0e1b13] text-base font-medium leading-normal">Sleep Science</p>
+                  <p class="text-[#50956d] text-sm font-normal leading-normal">3 Lessons</p>
+                  <p class="text-[#50956d] text-sm font-normal leading-normal">Starts in 15 days</p>
+                </div>
+              </div>
+            </div>
+            <div class="zoom-classes fixed right-4 top-[calc(50%_-_200px)] w-[300px] p-4 bg-[#e8f3ec] shadow-lg rounded-xl overflow-y-auto max-h-[400px] mt-4"> <!-- Added mt-4 to create margin-top -->
+              <button id="open-dialog" class="px-4 py-2 bg-[#50956d] text-white rounded">Add Zoom Meeting</button>
+              <h3 class="text-[#0e1b13] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Zoom Classes</h3>
+              <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
+                <div class="flex flex-col gap-3 pb-3">
+                  <div>
+                    <p class="text-[#0e1b13] text-base font-medium leading-normal">Morning Yoga</p>
+                    <p class="text-[#50956d] text-sm font-normal leading-normal">Schedule: Mon-Fri, 7:00 AM</p>
+                    <button class="mt-2 inline-flex items-center justify-center rounded-md border border-transparent bg-[#50956d] px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-[#40794f] focus:outline-none">
+                      Join Zoom
+                    </button>
+                  </div>
+                </div>
+                <div class="flex flex-col gap-3 pb-3">
+                  <div>
+                    <p class="text-[#0e1b13] text-base font-medium leading-normal">Healthy Cooking</p>
+                    <p class="text-[#50956d] text-sm font-normal leading-normal">Schedule: Wed & Sat, 5:00 PM</p>
+                    <button class="mt-2 inline-flex items-center justify-center rounded-md border border-transparent bg-[#50956d] px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-[#40794f] focus:outline-none">
+                      Join Zoom
+                    </button>
+                  </div>
+                </div>
+                <div class="flex flex-col gap-3 pb-3">
+                  <div>
+                    <p class="text-[#0e1b13] text-base font-medium leading-normal">Mindfulness Meditation</p>
+                    <p class="text-[#50956d] text-sm font-normal leading-normal">Schedule: Mon & Thu, 8:00 PM</p>
+                    <button class="mt-2 inline-flex items-center justify-center rounded-md border border-transparent bg-[#50956d] px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-[#40794f] focus:outline-none">
+                      Join Zoom
+                    </button>
+                  </div>
+                </div>
+                <!-- Add more zoom class entries here -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="addCourseModal" class="modal">
+      <div class="modal-content flex">
+          <div class="w-full pr-4">
+              <h2 class="text-[#0e1b13] text-2xl font-bold mb-4">Video Embed Builder</h2>
+              
+              <!-- Expanded Drag and Drop Section -->
+              <div class="w-full flex flex-col justify-center mb-4">
+                <div class="border-2 border-dashed border-gray-300 p-4 text-center">
+                    <p class="text-gray-500">Drag and drop video file</p>
+                    <button class="mt-2 py-2 px-4 bg-blue-500 text-white rounded">Browse</button>
+                </div>
+            </div>
+  
+              <div class="mb-4">
+                  <label class="block text-[#0e1b13] font-bold mb-2">Appearance</label>
+                  <div class="flex space-x-4">
+                      <button class="py-2 px-4 bg-gray-100 text-gray-700 rounded">Square</button>
+                      <button class="py-2 px-4 bg-blue-500 text-white rounded">Rounded</button>
+                      <button class="py-2 px-4 bg-gray-100 text-gray-700 rounded">Custom</button>
+                  </div>
+              </div>
+              <div class="mb-4">
+                  <label class="block text-[#0e1b13] font-bold mb-2">Playback</label>
+                  <div class="flex space-x-4">
+                      <button class="py-2 px-4 bg-blue-500 text-white rounded">Standard</button>
+                      <button class="py-2 px-4 bg-gray-100 text-gray-700 rounded">Popover</button>
+                      <button class="py-2 px-4 bg-gray-100 text-gray-700 rounded">Autoplay</button>
+                  </div>
+              </div>
+              <div class="mb-4">
+                  <label class="block text-[#0e1b13] font-bold mb-2">Copy Code</label>
+                  <button class="w-full py-2 px-4 bg-[#50956d] text-white rounded">Copy Embed Code</button>
+              </div>
+              <div class="flex justify-self-start mt-4">
+                  <button onclick="closeAddCourseDialog()" class="py-2 px-4 bg-gray-300 text-gray-700 rounded mr-2">Close</button>
+                  <button class="py-2 px-4 bg-[#50956d] text-white rounded">Done</button>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div id="dialog" class="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50 hidden">
+    <div class="bg-white p-6 rounded-lg shadow-lg w-80">
+        <h2 class="text-xl font-bold mb-4">Add Zoom Meeting</h2>
+        <form id="zoom-form">
+            <div class="mb-4">
+                <label for="meeting-topic" class="block text-sm font-medium text-gray-700">Meeting Topic</label>
+                <input type="text" id="meeting-topic" name="meeting-topic" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" required>
+            </div>
+            <div class="mb-4">
+                <label for="meeting-date" class="block text-sm font-medium text-gray-700">Meeting Date</label>
+                <input type="date" id="meeting-date" name="meeting-date" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" required>
+            </div>
+            <div class="mb-4">
+                <label for="meeting-time" class="block text-sm font-medium text-gray-700">Meeting Time</label>
+                <input type="time" id="meeting-time" name="meeting-time" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" required>
+            </div>
+            <div class="flex justify-end space-x-4">
+                <button type="button" id="close-dialog" class="px-4 py-2 bg-gray-500 text-white rounded">Cancel</button>
+                <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded">Save</button>
+            </div>
+        </form>
+    </div>
+</div>
+<div id="categories" class="py-4 hidden">
+  <div class="bg-white shadow overflow-hidden sm:rounded-lg">
+    <div class="px-4 py-5 sm:p-6">
+      <h3 class="text-lg leading-6 font-medium text-gray-900">
+        Add New Category
+      </h3>
+      <form class="mt-5">
+        <div class="grid grid-cols-6 gap-6">
+          <div class="col-span-6 sm:col-span-3">
+            <label for="category-name" class="block text-sm font-medium text-gray-700">Category Name</label>
+            <input type="text" name="category-name" id="category-name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+          </div>
+          <div class="col-span-6 sm:col-span-3">
+            <label for="category-type" class="block text-sm font-medium text-gray-700">Type</label>
+            <select id="category-type" name="category-type" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+              <option value="silver">Silver</option>
+              <option value="gold">Gold</option>
+              <option value="platinum">Platinum</option>
+            </select>
+          </div>
+        </div>
+        <div class="mt-5">
+          <button type="submit" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+            Add Category
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+  
+  <script>
+    function openAddCourseDialog() {
+        document.getElementById('addCourseModal').style.display = 'block';
+    }
+
+    function closeAddCourseDialog() {
+        document.getElementById('addCourseModal').style.display = 'none';
+    }
+   
+    // Close the modal if clicked outside the modal content
+    window.onclick = function(event) {
+        var modal = document.getElementById('addCourseModal');
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+    const openDialogButton = document.getElementById('open-dialog');
+    const closeDialogButton = document.getElementById('close-dialog');
+    const dialog = document.getElementById('dialog');
+    const zoomForm = document.getElementById('zoom-form');
+
+    // Function to open the dialog
+    openDialogButton.addEventListener('click', () => {
+        dialog.classList.remove('hidden');
+    });
+
+    // Function to close the dialog
+    closeDialogButton.addEventListener('click', () => {
+        dialog.classList.add('hidden');
+    });
+
+    // Handle form submission
+    zoomForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        // Implement your Zoom meeting creation logic here
+        console.log('Meeting Topic:', document.getElementById('meeting-topic').value);
+        console.log('Meeting Date:', document.getElementById('meeting-date').value);
+        console.log('Meeting Time:', document.getElementById('meeting-time').value);
+        // Close dialog after submission
+        dialog.classList.add('hidden');
+    });
+});
+</script>
+  </body>
+
+</html>

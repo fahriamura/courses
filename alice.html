@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+<div class="wrap">
+  <img src="alya.jpg">
+  <center>Alice <3</center>
+</div>
+<style>
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrap {
+  width: 400px;
+  aspect-ratio: 16:9;
+  border-radius: 2rem;
+  border: 2px solid lightblue;
+  overflow: hidden;
+}
+.wrap img {
+  width: 4250px;
+  aspect-ratio: 16:9;
+  animation: jump 1.7s steps(11) infinite;
+}
+@keyframes jump {
+  to {
+    margin-left: -4250px;
+  }
+}
+</style>
+</body>
+</html>
