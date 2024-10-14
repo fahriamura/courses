@@ -4,8 +4,12 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
-   <link href="https://unpkg.com/swiper/swiper-bundle.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://unpkg.com/swiper/swiper-bundle.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;500&display=swap');
         body {
@@ -16,9 +20,16 @@
         }
     </style>
 </head>
-<body class = "bg-white">
-    <div class="relative bg-cover bg-center">
-        <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover">
+<body class="bg-white">
+    <div class="relative bg-cover bg-center h-screen">
+        <video 
+            autoplay 
+            loop 
+            muted 
+            playsinline 
+            preload="auto"
+            class="absolute inset-0 w-full h-full object-cover"
+        >
             <source src="https://videos.pexels.com/video-files/2098989/2098989-uhd_2560_1440_30fps.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
@@ -42,9 +53,11 @@
                 </div>
             </div>
         </div>
-        <div class="relative z-10 flex flex-col items-start justify-center h-screen p-4">
-            <h1 class="text-white text-6xl md:text-8xl font-bold header-text">NATIVE STATE</h1>
-            <p class="text-white text-lg md:text-2xl mt-4">Where luxury, wellbeing, and peak performance coexist in perfect harmony</p>
+        <div class="relative z-10 flex flex-col items-start justify-center h-full p-4">
+        <h1 class="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold header-text leading-none tracking-tight">
+            TRANS&shy;FORMATIONAL<br>DETOX
+        </h1>
+        <p class="text-white text-lg md:text-4xl mt-4">Cleanse, Renew, Thrive!</p>
             <div class="mt-6 hidden md:flex space-x-4">
                 <a href="#" class="px-6 py-3 border border-white text-white hover:bg-white hover:text-black transition">BOOK BATHHOUSE VISIT</a>
                 <a href="#" class="px-6 py-3 border border-white text-white hover:bg-white hover:text-black transition">BOOK STUDIO CLASS</a>
@@ -52,407 +65,477 @@
         </div>
 
         <!-- Sidebar -->
-        <div id="sidebar" class="fixed inset-0 bg-black bg-opacity-75 z-20 hidden">
-        <div class="absolute top-0 right-0 p-6">
-            <button id="close-button" class="text-white focus:outline-none">
-                <i class="fas fa-times fa-2x"></i>
-            </button>
-        </div>
-        <div class="flex flex-col items-center justify-center h-full space-y-6">
-            <a href="#" class="px-6 py-3 border border-white text-white hover:bg-white hover:text-black transition">BOOK BATHHOUSE VISIT</a>
-            <a href="#" class="px-6 py-3 border border-white text-white hover:bg-white hover:text-black transition">BOOK STUDIO CLASS</a>
+        <div id="sidebar-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+        <div id="sidebar" class="fixed top-0 right-0 w-1/2 h-full bg-black z-50 transform translate-x-full transition-transform duration-300 ease-in-out">
+            <div class="flex justify-end p-6">
+                <button id="close-button" class="text-white focus:outline-none">
+                    <i class="fas fa-times fa-2x"></i>
+                </button>
+            </div>
+            <div class="flex flex-col items-center justify-center h-full space-y-6">
+                <a href="#" class="px-6 py-3 border border-white text-white hover:bg-white hover:text-black transition">BOOK BATHHOUSE VISIT</a>
+                <a href="#" class="px-6 py-3 border border-white text-white hover:bg-white hover:text-black transition">BOOK STUDIO CLASS</a>
+            </div>
         </div>
     </div>
-    </div>
-    <main class="flex justify-center items-center bg-white py-16 px-16">
-        <div class="bg-gradient-to-r from-pink-300 to-yellow-200 rounded-lg p-12 text-center px-7">
-            <p class="text-sm uppercase mb-4">Open Day | Saturday 12 October</p>
-            <h1 class="text-3xl font-bold mb-4">Join us to celebrate Native State's 1st birthday with $25 bathhouse sessions, $9 studio gym classes, free coffee and much more!</h1>
-            <button class="border border-white px-4 py-2 mt-4">DISCOVER NATIVE STATE'S OPEN DAY</button>
+    <main class= "bg-gray-200">
+    <div class="flex justify-center items-center bg-white py-8 md:py-16 px-4 md:px-16" data-aos="fade-in">
+            <div class="bg-gradient-to-r from-pink-300 to-yellow-200 rounded-lg p-6 md:p-12 text-center">
+                <p class="text-xs md:text-sm uppercase mb-2 md:mb-4">Open Day | Saturday 12 October</p>
+                <h1 class="text-lg md:text-3xl font-bold mb-2 md:mb-4">A 6 week intensive detox and transformational program that heals the intestine, colon and
+                        clears fungal and parasitic infections with the intention of creating significant and lasting
+                        change in your physical, emotional, and spiritual health.</h1>
+                <button class="border border-white px-3 py-1 md:px-4 md:py-2 mt-2 md:mt-4 text-sm md:text-base">DISCOVER ALIGNED SOVEREIGNTY'S OPEN DAY</button>
+            </div>
         </div>
-    </main>
-    <main class="text-center mt-16">
-            <p class="text-sm uppercase mb-4">Join us for a casual session or immerse yourself as a member</p>
-            <h1 class="text-4xl font-bold mb-8">The Gold Coast’s premier bathhouse and studio gym</h1>
-            <div class="space-x-4 mb-8">
-                <button class="border border-black px-4 py-2">BOOK BATHHOUSE VISIT</button>
-                <button class="border border-black px-4 py-2">BOOK STUDIO CLASS</button>
-            </div>
-            <div class="flex justify-center items-center space-x-2">
-                <i class="fab fa-google text-2xl"></i>
-                <span class="text-2xl font-bold">5.0</span>
-                <div class="flex space-x-1 text-yellow-500">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
+        <main class="text-center mt-16" data-aos="fade-in">
+                <p class="text-sm uppercase mb-4">Join us for a casual session or immerse yourself as a member</p>
+                <h1 class="text-4xl font-bold mb-8">The Gold Coast’s premier bathhouse and studio gym</h1>
+                <div class="space-x-4 mb-8">
+                    <button class="border border-black px-4 py-2">BOOK BATHHOUSE VISIT</button>
+                    <button class="border border-black px-4 py-2">BOOK STUDIO CLASS</button>
                 </div>
-            </div>
-            <p class="mt-2"><a href="#" class="underline">Read our 151 reviews</a></p>
-    </main>
-    <main class="px-4 md:px-10 py-8 md:py-16 pb-0 md:pb-0">
-        <div class="swiper-container">
-            <div class="swiper-wrapper">
-                <!-- The Bathhouse Slide -->
-                <div class="swiper-slide">
-                    <div class="relative rounded-lg overflow-hidden shadow-lg">
-                        <img alt="A luxurious bathhouse with a pool and modern design" class="w-full h-64 object-cover" src="https://placehold.co/600x800"/>
-                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-                            <div class="text-white text-2xl font-bold">The Bathhouse</div>
+                <div class="flex justify-center items-center space-x-2">
+                    <i class="fab fa-google text-2xl"></i>
+                    <span class="text-2xl font-bold">5.0</span>
+                    <div class="flex space-x-1 text-yellow-500">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <p class="mt-2"><a href="#" class="underline">Read our 151 reviews</a></p>
+        </div>
+        <div class="px-4 md:px-10 py-8 md:py-16 pb-0 md:pb-0" data-aos="fade-in">
+            <div class="text-center py-4">
+                    <p class="text-5xl font-bold mb-3 py-2">
+                        THE PROGRAMS
+                    </p>
+                </div>
+            <div class="swiper-container overflow-hidden"> <!-- Add overflow-hidden here -->
+                <div class="swiper-wrapper">
+                    <!-- The Bathhouse Slide -->
+                    <div class="swiper-slide">
+                        <div class="relative rounded-lg overflow-hidden shadow-lg">
+                        <img alt="Colorful vegetables on a wooden table representing an elimination diet" class="rounded-lg w-full" src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=340&q=80"/>
+                            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+                                <div class="text-white text-2xl font-bold">Elimination Diet</div>
+                            </div>
+                        </div>
+                        <div class="p-4 bg-white">
+                            <p class="text-gray-600">A straightforward eating plan designed to starve parasites and fungus, focusing on whole, organic foods to reduce the toxic load on your system</p>
                         </div>
                     </div>
-                    <div class="p-4 bg-white">
-                        <p class="text-gray-600">Indulge in opulent relaxation within our meticulously crafted European-inspired bathhouse</p>
-                    </div>
-                </div>
 
-                <!-- The Studio Slide -->
-                <div class="swiper-slide">
-                    <div class="relative rounded-lg overflow-hidden shadow-lg">
-                        <img alt="A group of people doing yoga in a studio" class="w-full h-64 object-cover" src="https://placehold.co/600x800"/>
-                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-                            <div class="text-white text-2xl font-bold">The Studio</div>
+                    <!-- The Studio Slide -->
+                    <div class="swiper-slide">
+                        <div class="relative rounded-lg overflow-hidden shadow-lg">
+                            <img alt="A group of people practicing yoga in a serene studio setting" class="w-full h-64 object-cover" src="https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80"/>
+                            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+                                <div class="text-white text-2xl font-bold">Lifestyle Supports to Detoxify + Harmonize</div>
+                            </div>
+                        </div>
+                        <div class="p-4 bg-white">
+                            <p class="text-gray-600">Breath, somatic practices, and lymphatic drainage techniques to enhance the detoxification process even further.</p>
                         </div>
                     </div>
-                    <div class="p-4 bg-white">
-                        <p class="text-gray-600">Re-align and strengthen your body &amp; mind within our premium holistic studio</p>
-                    </div>
-                </div>
 
-                <!-- Membership Packages Slide -->
-                <div class="swiper-slide">
-                    <div class="relative rounded-lg overflow-hidden shadow-lg">
-                        <img alt="A modern room with wooden benches and a towel hanging on the wall" class="w-full h-64 object-cover" src="https://placehold.co/600x800"/>
-                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-                            <div class="text-white text-2xl font-bold">Membership Packages</div>
+                    <!-- Membership Packages Slide -->
+                    <div class="swiper-slide">
+                        <div class="relative rounded-lg overflow-hidden shadow-lg">
+                            <img alt="Various herbal supplements and natural remedies in bottles and jars" class="w-full h-64 object-cover" src="https://images.unsplash.com/photo-1576602976047-174e57a47881?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80"/>
+                            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+                                <div class="text-white text-2xl font-bold">Supplements</div>
+                            </div>
+                        </div>
+                        <div class="p-4 bg-white">
+                            <p class="text-gray-600">Highest-quality herbal supplements that work like a vacuum, deeply cleansing and removing parasites, fungus, mucus, toxins and heavy metals from your colon.</p>
                         </div>
                     </div>
-                    <div class="p-4 bg-white">
-                        <p class="text-gray-600">Become a Member and enjoy a tailored package to suit your specific journey</p>
-                    </div>
                 </div>
-            </div>
-            <div class="swiper-pagination mt-1"></div>
-        </div>
-    </main>
-    <main class="flex flex-col md:flex-row items-center px-4 md:px-10 py-8 md:py-16 mt-[-12rem] md:mt-[-15rem]">
-        <div class="w-full md:w-1/2 p-4">
-            <img alt="Two people sitting in a wooden sauna" class="rounded-lg w-full" src="https://placehold.co/600x400"/>
-        </div>
-        <div class="w-full md:w-1/2 p-4 text-center md:text-left">
-            <h2 class="text-lg font-bold mb-4">MEMBERSHIP</h2>
-            <p class="mb-4">
-                Join a community of like-minds looking to incorporate well-being into their daily lives. Whether you prefer intense workouts, relaxing soaks, or both, we have a membership for you.
-            </p>
-            <button class="border border-black px-4 py-2">MEMBER BENEFITS</button>
-        </div>
-    </main>
-    <main class="flex flex-col md:flex-row items-center px-4 md:px-10 py-8 md:py-16">
-         <div class="w-full md:w-1/2 p-4 text-center md:text-left">
-            <h2 class="text-lg font-bold mb-4">MEMBERSHIP</h2>
-            <p class="mb-4">
-                Join a community of like-minds looking to incorporate well-being into their daily lives. Whether you prefer intense workouts, relaxing soaks, or both, we have a membership for you.
-            </p>
-            <button class="border border-black px-4 py-2">MEMBER BENEFITS</button>
-        </div>
-        <div class="w-full md:w-1/2 p-4">
-            <img alt="Two people sitting in a wooden sauna" class="rounded-lg w-full" src="https://placehold.co/600x400"/>
-        </div>
-
-    </main>
-    <main class="flex flex-col md:flex-row items-center px-4 md:px-10 py-8 md:py-16">
-        <div class="w-full md:w-1/2 p-4">
-            <img alt="Two people sitting in a wooden sauna" class="rounded-lg w-full" src="https://placehold.co/600x400"/>
-        </div>
-        <div class="w-full md:w-1/2 p-4 text-center md:text-left">
-            <h2 class="text-lg font-bold mb-4">MEMBERSHIP</h2>
-            <p class="mb-4">
-                Join a community of like-minds looking to incorporate well-being into their daily lives. Whether you prefer intense workouts, relaxing soaks, or both, we have a membership for you.
-            </p>
-            <button class="border border-black px-4 py-2">MEMBER BENEFITS</button>
-        </div>
-    </main>
-    <main class="px-4 md:px-10 py-8 md:py-16 pb-0 md:pb-0">
-        <div class="swiper-container">
-            <div class="swiper-wrapper">
-                <!-- The Bathhouse Slide -->
-                <div class="swiper-slide">
-                    <div class="relative rounded-lg overflow-hidden shadow-lg">
-                        <img alt="A luxurious bathhouse with a pool and modern design" class="w-full h-64 object-cover" src="https://placehold.co/600x800"/>
-                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-                            <div class="text-white text-2xl font-bold">The Bathhouse</div>
-                        </div>
-                    </div>
-                    <div class="p-4 bg-white">
-                        <p class="text-gray-600">Indulge in opulent relaxation within our meticulously crafted European-inspired bathhouse</p>
-                    </div>
-                </div>
-
-                <!-- The Studio Slide -->
-                <div class="swiper-slide">
-                    <div class="relative rounded-lg overflow-hidden shadow-lg">
-                        <img alt="A group of people doing yoga in a studio" class="w-full h-64 object-cover" src="https://placehold.co/600x800"/>
-                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-                            <div class="text-white text-2xl font-bold">The Studio</div>
-                        </div>
-                    </div>
-                    <div class="p-4 bg-white">
-                        <p class="text-gray-600">Re-align and strengthen your body &amp; mind within our premium holistic studio</p>
-                    </div>
-                </div>
-
-                <!-- Membership Packages Slide -->
-                <div class="swiper-slide">
-                    <div class="relative rounded-lg overflow-hidden shadow-lg">
-                        <img alt="A modern room with wooden benches and a towel hanging on the wall" class="w-full h-64 object-cover" src="https://placehold.co/600x800"/>
-                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-                            <div class="text-white text-2xl font-bold">Membership Packages</div>
-                        </div>
-                    </div>
-                    <div class="p-4 bg-white">
-                        <p class="text-gray-600">Become a Member and enjoy a tailored package to suit your specific journey</p>
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-pagination mt-1"></div>
-        </div>
-    </main>
-    <main class ="px-4 md:px-10 py-8 md:py-16 mt-[-12rem] md:mt-[-18rem]">
-        <div class="text-center py-4">
-            <p class="text-sm">
-                FOLLOW US ON INSTAGRAM – @YOURNATIVESTATE
-            </p>
-        </div>
-        <div class="flex justify-center space-x-4 px-4">
-            <div class="relative w-1/4">
-                <img alt="Open Day Flash Sale" class="w-full h-full object-cover" height="500" src="https://storage.googleapis.com/a1aa/image/jWiJAzCzFQ5tApy6WJjWrss5I9liRKqtUPGrI5ZrOkqtbm5E.jpg" width="300"/>
-                <div class="absolute inset-0 flex items-center justify-center">
-                <i class="fas fa-play text-white text-4xl">
-                </i>
-                </div>
-            </div>
-            <div class="relative w-1/4">
-                <img alt="Breathwork &amp; Meditation" class="w-full h-full object-cover" height="500" src="https://storage.googleapis.com/a1aa/image/H7aQLkAgXBbCBxjYj9vTcc6TRdhIftUAUgKeKtU1Fri0uZmTA.jpg" width="300"/>
-                <div class="absolute inset-0 flex items-center justify-center">
-                <i class="fas fa-play text-white text-4xl">
-                </i>
-                </div>
-            </div>
-            <div class="relative w-1/4">
-                <img alt="Group of people watching sunset" class="w-full h-full object-cover" height="500" src="https://storage.googleapis.com/a1aa/image/P0TBG2pY0wJaLtpsoPYKGjkZQSkD39RmP7qN6u9mWwfZ3MzJA.jpg" width="300"/>
-                <div class="absolute inset-0 flex items-center justify-center">
-                <i class="fas fa-play text-white text-4xl">
-                </i>
-                </div>
-            </div>
-            <div class="relative w-1/4">
-                <img alt="Gym entrance with stairs" class="w-full h-full object-cover" height="500" src="https://storage.googleapis.com/a1aa/image/z1jUXqVDfrX7WCqI3ZQSpX8rTMcaTFPLP3jEPLZmZgkb3MzJA.jpg" width="300"/>
-                <div class="absolute inset-0 flex items-center justify-center">
-                <i class="fas fa-play text-white text-4xl">
-                </i>
-                </div>
+                <div class="swiper-pagination mt-4"></div> <!-- Increase top margin -->
             </div>
         </div>
-    </main>
-    <main class="review px-4 md:px-10 py-8 md:py-16 bg-gray">
-        <section class="text-center">
-            <h2 class="text-sm uppercase tracking-widest">
-            Reviews
-            </h2>
-            <h1 class="text-4xl font-bold mt-2">
-            What our customers say
-            </h1>
-        </section>
-        <section class="mt-12 flex justify-center">
-            <div class="flex space-x-4 overflow-x-auto px-4">
-            <div class="bg-white p-6 rounded-lg shadow-md w-80">
-            <div class="flex items-center space-x-4">
-            <img alt="Profile picture of Richard Neill M." class="w-10 h-10 rounded-full" height="40" src="https://storage.googleapis.com/a1aa/image/ztuuM7XShd7tNpc9js0siq29Q6apihkyz0LDgcplSP3Ddm5E.jpg" width="40"/>
-            <div>
-                <h3 class="font-bold">
-                Richard Neill M.
-                </h3>
-                <p class="text-sm text-gray-500">
-                9 days ago
+        <div class="flex flex-col md:flex-row items-center px-4 md:px-10 py-8 md:py-16 mt-[-12rem] md:mt-[-15rem]" data-aos="fade-in">
+            <div class="w-full md:w-1/2 p-4">
+                <img alt="Fresh lemon slices and mint leaves, ingredients often used in detox drinks" class="rounded-lg w-full" src="https://images.unsplash.com/photo-1622597467836-f3285f2131b8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80"/>
+            </div>
+            <div class="w-full md:w-1/2 p-4 text-center md:text-left">
+                <h2 class="text-lg font-bold mb-4">Why A Fungal Parasite Cleanse is Necessary </h2>
+                <p class="mb-4">
+                    Fungal and parasitic overgrowth are primary causes of inflammation, underlying many health issues. Our 6-week detox program targets this root cause, starving fungi and parasites to initiate healing. We go beyond physical cleansing, addressing mental, emotional, and spiritual imbalances for holistic wellness. This approach enables lasting relief where other methods fall short.
                 </p>
             </div>
-            </div>
-            <div class="flex items-center mt-4">
-            <i class="fab fa-google text-blue-500">
-            </i>
-            <div class="flex ml-2">
-                <i class="fas fa-star text-yellow-500">
-                </i>
-                <i class="fas fa-star text-yellow-500">
-                </i>
-                <i class="fas fa-star text-yellow-500">
-                </i>
-                <i class="fas fa-star text-yellow-500">
-                </i>
-                <i class="fas fa-star text-yellow-500">
-                </i>
-            </div>
-            </div>
-            <p class="mt-4 text-gray-700">
-            Good facilities, friendly staff and well priced.
-            </p>
-            </div>
-            <div class="bg-white p-6 rounded-lg shadow-md w-80">
-            <div class="flex items-center space-x-4">
-            <img alt="Profile picture of Jenelle Fraser" class="w-10 h-10 rounded-full" height="40" src="https://storage.googleapis.com/a1aa/image/tNzw0jUy00pXB57zTtfkL6D10vB1R6f7vkcKjIx7xktR0ZmTA.jpg" width="40"/>
-            <div>
-                <h3 class="font-bold">
-                Jenelle Fraser
-                </h3>
-                <p class="text-sm text-gray-500">
-                9 days ago
+        </div>
+        <div class="flex flex-col md:flex-row items-center px-4 md:px-10 py-8 md:py-16" data-aos="fade-in">
+            <div class="w-full md:w-1/2 p-4 text-center md:text-left">
+                <h2 class="text-lg font-bold mb-4">Specifics of the Detox</h2>
+                <p class="mb-4">
+                    Our 6-week Transformational Detox centers on an organic, nutrient-dense diet that promotes healing and regeneration. It includes high-quality meats, non-starchy vegetables, raw dairy, eggs, and select fruits, while eliminating inflammatory foods. Powerful supplements target parasites, fungi, heavy metals, and toxins in your intestines and colon. We complement this with mental and emotional detoxification through somatic practices, lymphatic drainage, and intentional breathing. This holistic approach has led to remarkable transformations, from resolving skin issues to overcoming food allergies and achieving hormonal balance.
                 </p>
             </div>
+            <div class="w-full md:w-1/2 p-4">
+                <img alt="Colorful vegetables on a wooden table representing an elimination diet" class="rounded-lg w-full" src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400&q=80"/>
             </div>
-            <div class="flex items-center mt-4">
-            <i class="fab fa-google text-blue-500">
-            </i>
-            <div class="flex ml-2">
-                <i class="fas fa-star text-yellow-500">
-                </i>
-                <i class="fas fa-star text-yellow-500">
-                </i>
-                <i class="fas fa-star text-yellow-500">
-                </i>
-                <i class="fas fa-star text-yellow-500">
-                </i>
-                <i class="fas fa-star text-yellow-500">
-                </i>
+
+        </div>
+        <div class="flex flex-col md:flex-row items-center px-4 md:px-10 py-8 md:py-16" data-aos="fade-in">
+            <div class="w-full md:w-1/2 p-4">
+            <img alt="Orang-orang bersantai di tepi pantai menikmati matahari terbenam" class="rounded-lg w-full" src="https://images.fineartamerica.com/images/artworkimages/mediumlarge/2/usa-new-york-people-relaxing-in-park-maremagnum.jpg"/>
             </div>
+            <div class="w-full md:w-1/2 p-4 text-center md:text-left">
+                <h2 class="text-lg font-bold mb-4">Do I Really Need This?</h2>
+                <p class="mb-4">
+                    The short answer is YES! 95% of people are living with an imbalance of parasites and fungi within their bodies, causing systemic inflammation. This inflammation presents differently in everyone depending on where your body is chronically depleted, and can show up as:
+                </p>
+                <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-2 pl-5 mb-4">
+                    <li class="flex items-start">
+                        <span class="mr-2">•</span>
+                        <span>Lack of Energy</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="mr-2">•</span>
+                        <span>Constant Cravings</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="mr-2">•</span>
+                        <span>Excessive Appetite</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="mr-2">•</span>
+                        <span>Persistent Inflammation</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="mr-2">•</span>
+                        <span>Food Intolerances or Allergies</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="mr-2">•</span>
+                        <span>Bloating and/or Excessive Gas</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="mr-2">•</span>
+                        <span>Diarrhea & Constipation</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="mr-2">•</span>
+                        <span>Difficulty Digesting Food</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="mr-2">•</span>
+                        <span>Smelly Body Odour</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="mr-2">•</span>
+                        <span>Sleep Issues</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="mr-2">•</span>
+                        <span>Brain Fog</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="mr-2">•</span>
+                        <span>Headaches</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="mr-2">•</span>
+                        <span>Vertigo</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="mr-2">•</span>
+                        <span>Skin Irritations (Psoriasis/Eczema/Dry Flakey Skin/Acne)</span>
+                    </li>
+                </ul>
             </div>
-            <p class="mt-4 text-gray-700">
-            Visited the relaxation area for a 45 minute session and thoroughly enjoyed
-            </p>
-            <a class="text-blue-500" href="#">
-            Read more
-            </a>
+        </div>
+        <div class="px-4 md:px-10 py-8 md:py-16 pb-0 md:pb-0" data-aos="fade-in">
+            <div class="text-center py-4">
+                        <p class="text-5xl font-bold mb-3 py-2">
+                            Join Our Membership
+                        </p>
+                    </div>
+            <div class="swiper-container overflow-hidden">
+                <div class="swiper-wrapper">
+                    <!-- The Bathhouse Slide -->
+                    <div class="swiper-slide">
+                        <div class="relative rounded-lg overflow-hidden shadow-lg">
+                            <img alt="A luxurious bathhouse with a pool and modern design" class="w-full h-64 object-cover" src="https://placehold.co/600x800"/>
+                            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+                                <div class="text-white text-2xl font-bold">The Bathhouse</div>
+                            </div>
+                        </div>
+                        <div class="p-4 bg-white">
+                            <p class="text-gray-600">Indulge in opulent relaxation within our meticulously crafted European-inspired bathhouse</p>
+                        </div>
+                    </div>
+
+                    <!-- The Studio Slide -->
+                    <div class="swiper-slide">
+                        <div class="relative rounded-lg overflow-hidden shadow-lg">
+                            <img alt="A group of people doing yoga in a studio" class="w-full h-64 object-cover" src="https://placehold.co/600x800"/>
+                            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+                                <div class="text-white text-2xl font-bold">The Studio</div>
+                            </div>
+                        </div>
+                        <div class="p-4 bg-white">
+                            <p class="text-gray-600">Re-align and strengthen your body &amp; mind within our premium holistic studio</p>
+                        </div>
+                    </div>
+
+                    <!-- Membership Packages Slide -->
+                    <div class="swiper-slide">
+                        <div class="relative rounded-lg overflow-hidden shadow-lg">
+                            <img alt="A modern room with wooden benches and a towel hanging on the wall" class="w-full h-64 object-cover" src="https://placehold.co/600x800"/>
+                            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+                                <div class="text-white text-2xl font-bold">Membership Packages</div>
+                            </div>
+                        </div>
+                        <div class="p-4 bg-white">
+                            <p class="text-gray-600">Become a Member and enjoy a tailored package to suit your specific journey</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination mt-1"></div>
             </div>
-            <div class="bg-white p-6 rounded-lg shadow-md w-80">
-            <div class="flex items-center space-x-4">
-            <img alt="Profile picture of Brendan Edwa" class="w-10 h-10 rounded-full" height="40" src="https://storage.googleapis.com/a1aa/image/efnGvfEfESc2XT55VDqZ3w2VOmpNwDD9fSdebQYbOTmPDdm5E.jpg" width="40"/>
-            <div>
-                <h3 class="font-bold">
-                Brendan Edwa
-                </h3>
-                <p class="text-sm text-gray-500">
-                9 days ago
+        </div>
+        <div class ="px-4 md:px-10 py-8 md:py-16 mt-[-12rem] md:mt-[-18rem]" data-aos="fade-in">
+            <div class="text-center py-4">
+                <p class="text-sm">
+                    FOLLOW US ON INSTAGRAM – @ALLIGNEDSOVEREIGNTY
                 </p>
             </div>
+            <div class="flex justify-center space-x-4 px-4">
+                <div class="relative w-1/4">
+                    <img alt="Open Day Flash Sale" class="w-full h-full object-cover" height="500" src="https://storage.googleapis.com/a1aa/image/jWiJAzCzFQ5tApy6WJjWrss5I9liRKqtUPGrI5ZrOkqtbm5E.jpg" width="300"/>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                    <i class="fas fa-play text-white text-4xl">
+                    </i>
+                    </div>
+                </div>
+                <div class="relative w-1/4">
+                    <img alt="Breathwork &amp; Meditation" class="w-full h-full object-cover" height="500" src="https://storage.googleapis.com/a1aa/image/H7aQLkAgXBbCBxjYj9vTcc6TRdhIftUAUgKeKtU1Fri0uZmTA.jpg" width="300"/>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                    <i class="fas fa-play text-white text-4xl">
+                    </i>
+                    </div>
+                </div>
+                <div class="relative w-1/4">
+                    <img alt="Group of people watching sunset" class="w-full h-full object-cover" height="500" src="https://storage.googleapis.com/a1aa/image/P0TBG2pY0wJaLtpsoPYKGjkZQSkD39RmP7qN6u9mWwfZ3MzJA.jpg" width="300"/>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                    <i class="fas fa-play text-white text-4xl">
+                    </i>
+                    </div>
+                </div>
+                <div class="relative w-1/4">
+                    <img alt="Gym entrance with stairs" class="w-full h-full object-cover" height="500" src="https://storage.googleapis.com/a1aa/image/z1jUXqVDfrX7WCqI3ZQSpX8rTMcaTFPLP3jEPLZmZgkb3MzJA.jpg" width="300"/>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                    <i class="fas fa-play text-white text-4xl">
+                    </i>
+                    </div>
+                </div>
             </div>
-            <div class="flex items-center mt-4">
-            <i class="fab fa-google text-blue-500">
-            </i>
-            <div class="flex ml-2">
-                <i class="fas fa-star text-yellow-500">
+        </div>
+        <div class="review px-4 md:px-10 py-8 md:py-16 bg-gray" data-aos="fade-in">
+            <section class="text-center">
+                <h2 class="text-sm uppercase tracking-widest">
+                Reviews
+                </h2>
+                <h1 class="text-4xl font-bold mt-2">
+                What our customers say
+                </h1>
+            </section>
+            <section class="mt-12 flex justify-center">
+                <div class="flex space-x-4 overflow-x-auto px-4">
+                <div class="bg-white p-6 rounded-lg shadow-md w-80">
+                <div class="flex items-center space-x-4">
+                <img alt="Profile picture of Richard Neill M." class="w-10 h-10 rounded-full" height="40" src="https://storage.googleapis.com/a1aa/image/ztuuM7XShd7tNpc9js0siq29Q6apihkyz0LDgcplSP3Ddm5E.jpg" width="40"/>
+                <div>
+                    <h3 class="font-bold">
+                    Richard Neill M.
+                    </h3>
+                    <p class="text-sm text-gray-500">
+                    9 days ago
+                    </p>
+                </div>
+                </div>
+                <div class="flex items-center mt-4">
+                <i class="fab fa-google text-blue-500">
                 </i>
-                <i class="fas fa-star text-yellow-500">
-                </i>
-                <i class="fas fa-star text-yellow-500">
-                </i>
-                <i class="fas fa-star text-yellow-500">
-                </i>
-                <i class="fas fa-star text-yellow-500">
-                </i>
-            </div>
-            </div>
-            <p class="mt-4 text-gray-700">
-            Just amazing! The bathhouse has infrared sauna, dry sauna, steam
-            </p>
-            <a class="text-blue-500" href="#">
-            Read more
-            </a>
-            </div>
-            <div class="bg-white p-6 rounded-lg shadow-md w-80">
-            <div class="flex items-center space-x-4">
-            <img alt="Profile picture of georgie kerr" class="w-10 h-10 rounded-full" height="40" src="https://storage.googleapis.com/a1aa/image/Tjl6aYPx00rNF9iDLXMAcrU8eKiy9EgEX9T7wIeps0jQ0ZmTA.jpg" width="40"/>
-            <div>
-                <h3 class="font-bold">
-                georgie kerr
-                </h3>
-                <p class="text-sm text-gray-500">
-                16 days ago
+                <div class="flex ml-2">
+                    <i class="fas fa-star text-yellow-500">
+                    </i>
+                    <i class="fas fa-star text-yellow-500">
+                    </i>
+                    <i class="fas fa-star text-yellow-500">
+                    </i>
+                    <i class="fas fa-star text-yellow-500">
+                    </i>
+                    <i class="fas fa-star text-yellow-500">
+                    </i>
+                </div>
+                </div>
+                <p class="mt-4 text-gray-700">
+                Good facilities, friendly staff and well priced.
                 </p>
-            </div>
-            </div>
-            <div class="flex items-center mt-4">
-            <i class="fab fa-google text-blue-500">
-            </i>
-            <div class="flex ml-2">
-                <i class="fas fa-star text-yellow-500">
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md w-80">
+                <div class="flex items-center space-x-4">
+                <img alt="Profile picture of Jenelle Fraser" class="w-10 h-10 rounded-full" height="40" src="https://storage.googleapis.com/a1aa/image/tNzw0jUy00pXB57zTtfkL6D10vB1R6f7vkcKjIx7xktR0ZmTA.jpg" width="40"/>
+                <div>
+                    <h3 class="font-bold">
+                    Jenelle Fraser
+                    </h3>
+                    <p class="text-sm text-gray-500">
+                    9 days ago
+                    </p>
+                </div>
+                </div>
+                <div class="flex items-center mt-4">
+                <i class="fab fa-google text-blue-500">
                 </i>
-                <i class="fas fa-star text-yellow-500">
-                </i>
-                <i class="fas fa-star text-yellow-500">
-                </i>
-                <i class="fas fa-star text-yellow-500">
-                </i>
-                <i class="fas fa-star text-yellow-500">
-                </i>
-            </div>
-            </div>
-            <p class="mt-4 text-gray-700">
-            My experience at native state was amazing. The facilities are great and
-            </p>
-            <a class="text-blue-500" href="#">
-            Read more
-            </a>
-            </div>
-            <div class="bg-white p-6 rounded-lg shadow-md w-80">
-            <div class="flex items-center space-x-4">
-            <img alt="Profile picture of Lauren McGee" class="w-10 h-10 rounded-full" height="40" src="https://storage.googleapis.com/a1aa/image/VPKXSQUcnyJ2Mlr0YWhzHJXd0SUyTeWyoV2E2eBS4KmN0ZmTA.jpg" width="40"/>
-            <div>
-                <h3 class="font-bold">
-                Lauren McGee
-                </h3>
-                <p class="text-sm text-gray-500">
-                16 days ago
+                <div class="flex ml-2">
+                    <i class="fas fa-star text-yellow-500">
+                    </i>
+                    <i class="fas fa-star text-yellow-500">
+                    </i>
+                    <i class="fas fa-star text-yellow-500">
+                    </i>
+                    <i class="fas fa-star text-yellow-500">
+                    </i>
+                    <i class="fas fa-star text-yellow-500">
+                    </i>
+                </div>
+                </div>
+                <p class="mt-4 text-gray-700">
+                Visited the relaxation area for a 45 minute session and thoroughly enjoyed
                 </p>
-            </div>
-            </div>
-            <div class="flex items-center mt-4">
-            <i class="fab fa-google text-blue-500">
-            </i>
-            <div class="flex ml-2">
-                <i class="fas fa-star text-yellow-500">
+                <a class="text-blue-500" href="#">
+                Read more
+                </a>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md w-80">
+                <div class="flex items-center space-x-4">
+                <img alt="Profile picture of Brendan Edwa" class="w-10 h-10 rounded-full" height="40" src="https://storage.googleapis.com/a1aa/image/efnGvfEfESc2XT55VDqZ3w2VOmpNwDD9fSdebQYbOTmPDdm5E.jpg" width="40"/>
+                <div>
+                    <h3 class="font-bold">
+                    Brendan Edwa
+                    </h3>
+                    <p class="text-sm text-gray-500">
+                    9 days ago
+                    </p>
+                </div>
+                </div>
+                <div class="flex items-center mt-4">
+                <i class="fab fa-google text-blue-500">
                 </i>
-                <i class="fas fa-star text-yellow-500">
+                <div class="flex ml-2">
+                    <i class="fas fa-star text-yellow-500">
+                    </i>
+                    <i class="fas fa-star text-yellow-500">
+                    </i>
+                    <i class="fas fa-star text-yellow-500">
+                    </i>
+                    <i class="fas fa-star text-yellow-500">
+                    </i>
+                    <i class="fas fa-star text-yellow-500">
+                    </i>
+                </div>
+                </div>
+                <p class="mt-4 text-gray-700">
+                Just amazing! The bathhouse has infrared sauna, dry sauna, steam
+                </p>
+                <a class="text-blue-500" href="#">
+                Read more
+                </a>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md w-80">
+                <div class="flex items-center space-x-4">
+                <img alt="Profile picture of georgie kerr" class="w-10 h-10 rounded-full" height="40" src="https://storage.googleapis.com/a1aa/image/Tjl6aYPx00rNF9iDLXMAcrU8eKiy9EgEX9T7wIeps0jQ0ZmTA.jpg" width="40"/>
+                <div>
+                    <h3 class="font-bold">
+                    georgie kerr
+                    </h3>
+                    <p class="text-sm text-gray-500">
+                    16 days ago
+                    </p>
+                </div>
+                </div>
+                <div class="flex items-center mt-4">
+                <i class="fab fa-google text-blue-500">
                 </i>
-                <i class="fas fa-star text-yellow-500">
+                <div class="flex ml-2">
+                    <i class="fas fa-star text-yellow-500">
+                    </i>
+                    <i class="fas fa-star text-yellow-500">
+                    </i>
+                    <i class="fas fa-star text-yellow-500">
+                    </i>
+                    <i class="fas fa-star text-yellow-500">
+                    </i>
+                    <i class="fas fa-star text-yellow-500">
+                    </i>
+                </div>
+                </div>
+                <p class="mt-4 text-gray-700">
+                My experience at Aligned Sovereignty was amazing. The facilities are great and
+                </p>
+                <a class="text-blue-500" href="#">
+                Read more
+                </a>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md w-80">
+                <div class="flex items-center space-x-4">
+                <img alt="Profile picture of Lauren McGee" class="w-10 h-10 rounded-full" height="40" src="https://storage.googleapis.com/a1aa/image/VPKXSQUcnyJ2Mlr0YWhzHJXd0SUyTeWyoV2E2eBS4KmN0ZmTA.jpg" width="40"/>
+                <div>
+                    <h3 class="font-bold">
+                    Lauren McGee
+                    </h3>
+                    <p class="text-sm text-gray-500">
+                    16 days ago
+                    </p>
+                </div>
+                </div>
+                <div class="flex items-center mt-4">
+                <i class="fab fa-google text-blue-500">
                 </i>
-                <i class="fas fa-star text-yellow-500">
-                </i>
-                <i class="fas fa-star text-yellow-500">
-                </i>
-            </div>
-            </div>
-            <p class="mt-4 text-gray-700">
-            State of the art place! Everything is so prestigious and beautiful.
-            </p>
-            <a class="text-blue-500" href="#">
-            Read more
-            </a>
-            </div>
-            </div>
-        </section>
-        <div class="flex justify-center mt-8">
-            <div class="flex space-x-2">
-            <span class="block w-2 h-2 bg-gray-400 rounded-full">
-            </span>
-            <span class="block w-2 h-2 bg-gray-800 rounded-full">
-            </span>
-            <span class="block w-2 h-2 bg-gray-400 rounded-full">
-            </span>
+                <div class="flex ml-2">
+                    <i class="fas fa-star text-yellow-500">
+                    </i>
+                    <i class="fas fa-star text-yellow-500">
+                    </i>
+                    <i class="fas fa-star text-yellow-500">
+                    </i>
+                    <i class="fas fa-star text-yellow-500">
+                    </i>
+                    <i class="fas fa-star text-yellow-500">
+                    </i>
+                </div>
+                </div>
+                <p class="mt-4 text-gray-700">
+                State of the art place! Everything is so prestigious and beautiful.
+                </p>
+                <a class="text-blue-500" href="#">
+                Read more
+                </a>
+                </div>
+                </div>
+            </section>
+            <div class="flex justify-center mt-8">
+                <div class="flex space-x-2">
+                <span class="block w-2 h-2 bg-gray-400 rounded-full">
+                </span>
+                <span class="block w-2 h-2 bg-gray-800 rounded-full">
+                </span>
+                <span class="block w-2 h-2 bg-gray-400 rounded-full">
+                </span>
+                </div>
             </div>
         </div>
     </main>
-    <footer class="container mx-auto p-8">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <footer class="container mx-auto p-8 bg-white overflow-hidden" data-aos="fade-in">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 overflow-hidden">
             <div>
                 <h2 class="font-bold">FIND US</h2>
                 <p>3/2 CREEK STREET,<br>COOLANGATTA QLD 4225</p>
@@ -464,7 +547,7 @@
                 <p>INSTAGRAM<br>FACEBOOK<br>YOUTUBE</p>
             </div>
             <div>
-                <h2 class="font-bold">JOIN THE NATIVE STATE COMMUNITY AND RECEIVE EXCLUSIVE OFFERS, NEWS, AND KNOWLEDGE</h2>
+                <h2 class="font-bold">JOIN THE Aligned Sovereignty COMMUNITY AND RECEIVE EXCLUSIVE OFFERS, NEWS, AND KNOWLEDGE</h2>
                 <form class="mt-4">
                     <input type="text" placeholder="FIRST NAME" class="w-full border-b-2 border-black mb-4 p-2">
                     <input type="text" placeholder="LAST NAME" class="w-full border-b-2 border-black mb-4 p-2">
@@ -475,47 +558,73 @@
             </div>
         </div>
         <div class="mt-8 text-center">
-            <p>© 2023 NATIVE STATE</p>
+            <p>© 2023 Aligned Sovereignty</p>
             <p>WEBSITE BY STUDIO ODEA</p>
         </div>
         <div class="mt-8 text-center text-6xl font-bold">
-            NATIVE STATE
+            ALIGNED SOVEREIGNTY
         </div>
     </footer>
+
     <script>
         const menuButton = document.getElementById('menu-button');
         const closeButton = document.getElementById('close-button');
         const sidebar = document.getElementById('sidebar');
+        const sidebarOverlay = document.getElementById('sidebar-overlay');
+
+        function openSidebar() {
+            sidebar.classList.remove('translate-x-full');
+            sidebarOverlay.classList.remove('hidden');
+        }
+
+        function closeSidebar() {
+            sidebar.classList.add('translate-x-full');
+            sidebarOverlay.classList.add('hidden');
+        }
 
         menuButton.addEventListener('click', () => {
-            sidebar.classList.remove('hidden');
+            if (sidebar.classList.contains('translate-x-full')) {
+                openSidebar();
+            } else {
+                closeSidebar();
+            }
         });
 
-        closeButton.addEventListener('click', () => {
-            sidebar.classList.add('hidden');
-        });
+        closeButton.addEventListener('click', closeSidebar);
+        sidebarOverlay.addEventListener('click', closeSidebar);
+
+        // Update Swiper initialization
         var swiper = new Swiper('.swiper-container', {
-            slidesPerView: 1,
-            spaceBetween: 10,
+            slidesPerView: 'auto', // Change to 'auto'
+            spaceBetween: 20,
+            centeredSlides: true, // Add this line
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true,
             },
             breakpoints: {
                 640: {
-                    slidesPerView: 1,
+                    slidesPerView: 2,
                     spaceBetween: 20,
+                    centeredSlides: false, // Add this line
                 },
                 768: {
                     slidesPerView: 2,
-                    spaceBetween: 40,
+                    spaceBetween: 30,
+                    centeredSlides: false, // Add this line
                 },
                 1024: {
                     slidesPerView: 3,
-                    spaceBetween: 50,
+                    spaceBetween: 40,
+                    centeredSlides: false, // Add this line
                 },
             }
         });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init();
+        });
     </script>
+
 </body>
 </html>
